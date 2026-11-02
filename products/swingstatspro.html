@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwingStatsPro Case Study | Golf Tournament Scoring &amp; Live Analytics</title>
+  <meta name="description" content="Engineering and business case study of SwingStatsPro: real-time digital golf scoring, automated Stableford calculations, and live clubhouse leaderboards.">
+  <meta name="author" content="Pranav Ghosh">
+  <meta property="og:title" content="SwingStatsPro — Golf Tournament Scoring &amp; Analytics Platform Case Study">
+  <meta property="og:description" content="How SwingStatsPro reduced golf tournament score tallying from 90+ minutes to zero seconds with real-time digital scoring.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+  <div class="bg-atmosphere"></div>
+
+  <!-- ==========================================================================
+       DASHBOARD TOP NAVBAR
+       Left: PranavGhosh | Centre: Role Switcher | Right: Let's Connect
+       ========================================================================== -->
+  <header class="dashboard-navbar">
+    
+    <!-- Left: PranavGhosh -->
+    <div class="nav-left">
+      <button class="nav-toggle-sidebar-btn" id="mobile-sidebar-toggle" title="Toggle Navigation Sidebar">
+        <span>☰</span>
+      </button>
+
+      <a href="../index.html#overview" class="brand-anchor">
+        <div class="brand-avatar-mini">PG</div>
+        <div class="brand-text-name">Pranav<span>Ghosh</span></div>
+      </a>
+    </div>
+
+    <!-- Centre: Two separate role buttons with Liquid Glass Sliding Track -->
+    <div class="nav-centre">
+      <div class="nav-role-slider-track" id="nav-role-slider-track" data-mode="builder">
+        <div class="nav-role-slider-thumb" id="nav-role-slider-thumb"></div>
+        <button class="nav-role-pill" data-mode="consultant" id="nav-pill-consultant" type="button" title="Switch to Data &amp; AI Consultant view">
+          <span class="nav-centre-dot"></span>
+          <span>Data &amp; AI Consultant</span>
+        </button>
+        <button class="nav-role-pill nav-role-pill-builder active" data-mode="builder" id="nav-pill-builder" type="button" title="Switch to AI Product Builder view">
+          <span class="nav-centre-dot dot-yellow"></span>
+          <span>AI Product Builder</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right: Download PDF & Let's Connect Button -->
+    <div class="nav-right" style="display: flex; align-items: center; gap: 0.65rem;">
+      <a href="../assets/docs/swingstatspro-case-study.pdf" download="SwingStatsPro-Case-Study.pdf" class="nav-download-pdf-btn" title="Download SwingStatsPro 1-Page Case Study PDF">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        <span>Download PDF</span>
+      </a>
+      <button id="btn-open-connect-modal" class="btn-lets-connect" title="Connect with Pranav">
+        <span>Let's Connect</span>
+        <span>→</span>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- ==========================================================================
+       SECONDARY SUB-NAVBAR: SHOWING PRODUCTS (Direct 1-Click Platform Switcher)
+       ========================================================================== -->
+  <nav class="cs-products-subnav" aria-label="AI Products Directory">
+    <div class="cs-subnav-container">
+      <div class="cs-subnav-track">
+        <a href="shadow-analytics.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">📄</span>
+          <span class="cs-subnav-name">Shadow Analytics</span>
+          <span class="cs-subnav-tag">Doc AI</span>
+        </a>
+        <a href="the-wisely-app.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">💳</span>
+          <span class="cs-subnav-name">The Wisely App</span>
+          <span class="cs-subnav-tag">Finance</span>
+        </a>
+        <a href="swingstatspro.html" class="cs-subnav-pill active">
+          <span class="cs-subnav-icon">⛳</span>
+          <span class="cs-subnav-name">SwingStatsPro</span>
+          <span class="cs-subnav-tag">Sports</span>
+        </a>
+        <a href="shipcargo.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">🚢</span>
+          <span class="cs-subnav-name">ShipCargo</span>
+          <span class="cs-subnav-tag">Logistics</span>
+        </a>
+        <a href="torque-care.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">🚗</span>
+          <span class="cs-subnav-name">Torque Care</span>
+          <span class="cs-subnav-tag">Auto Care</span>
+        </a>
+        <a href="nirvana.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">🧘</span>
+          <span class="cs-subnav-name">Nirvana</span>
+          <span class="cs-subnav-tag">Health</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="case-study-wrapper">
+
+    <!-- Hero Header -->
+    <section class="cs-hero">
+      <div class="cs-hero-topline">
+        <div class="cs-badge-group">
+          <span class="cs-badge">Case Study #03</span>
+          <span class="cs-badge badge-live">
+            <span class="pulse-dot"></span>
+            <span>Live Platform • swing-pro-rose.vercel.app</span>
+          </span>
+        </div>
+        <span class="cs-badge" style="background: rgba(0,0,0,0.04); color: var(--text-secondary); border-color: var(--border-card);">Sports Analytics &amp; IoT</span>
+      </div>
+
+      <h1 class="cs-hero-title">SwingStatsPro</h1>
+      <p class="cs-hero-subtitle">
+        A real-time golf tournament scoring and player analytics platform that replaces paper cards with live digital scoring, automated handicap/Stableford calculations, and instant clubhouse broadcast leaderboards.
+      </p>
+
+      <!-- Redesigned Hero Meta & Live Web Preview Window -->
+      <div class="cs-live-window-stage">
+        
+        <!-- Meta Specification Strip -->
+        <div class="cs-live-meta-strip">
+          <div class="cs-meta-pill">
+            <span class="cs-meta-pill-label">Positioning</span>
+            <span class="cs-meta-pill-val">Golf Scoring &amp; Analytics</span>
+          </div>
+          <div class="cs-meta-pill">
+            <span class="cs-meta-pill-label">Role</span>
+            <span class="cs-meta-pill-val">Founder &amp; Sports Tech Lead</span>
+          </div>
+          <div class="cs-meta-pill">
+            <span class="cs-meta-pill-label">Core Tech</span>
+            <span class="cs-meta-pill-val">React • WebSockets • Node.js • Cloud</span>
+          </div>
+          <div class="cs-meta-pill cs-meta-pill-cta">
+            <span class="cs-meta-pill-label">Live Deployment</span>
+            <a href="https://swing-pro-rose.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-live-url-anchor" title="Open full platform in new window">
+              <span class="live-ping-dot"></span>
+              <span>swing-pro-rose.vercel.app</span>
+              <span>↗</span>
+            </a>
+          </div>
+          <div class="cs-meta-pill cs-meta-pill-pdf">
+            <span class="cs-meta-pill-label">Executive One-Pager</span>
+            <a href="../assets/docs/swingstatspro-case-study.pdf" download="SwingStatsPro-Case-Study.pdf" class="cs-pdf-download-anchor" title="Download SwingStatsPro Case Study PDF">
+              <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                </svg>
+                <span>Download PDF</span>
+              </span>
+              <span class="cs-pdf-badge-tag">PDF</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sleek macOS-Style Live Web Window -->
+        <div class="cs-web-window">
+          <!-- Window Header Bar -->
+          <div class="cs-window-chrome">
+            <div class="window-traffic-lights">
+              <span class="traffic-light light-red" title="Close"></span>
+              <span class="traffic-light light-yellow" title="Minimize"></span>
+              <span class="traffic-light light-green" title="Expand"></span>
+            </div>
+
+            <!-- Address Bar with SSL Lock -->
+            <div class="window-address-bar">
+              <span class="ssl-lock" title="Secure SSL Connection">🔒</span>
+              <span class="address-prefix">https://</span>
+              <span class="address-host">swing-pro-rose.vercel.app</span>
+              <span class="window-badge-live">LIVE APPLICATION</span>
+            </div>
+
+            <!-- Window Quick Actions -->
+            <div class="window-actions">
+              <button type="button" class="window-action-btn btn-refresh-window" title="Reload Web Window" aria-label="Reload Web Window">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                </svg>
+              </button>
+              <a href="https://swing-pro-rose.vercel.app/" target="_blank" rel="noopener noreferrer" class="window-action-btn" title="Open in New Tab" aria-label="Open in New Tab">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Window Viewport with Canvas Screenshot Preview -->
+          <div class="cs-window-viewport">
+            <canvas aria-hidden="true" aria-label="Preview Screenshot of swing-pro-rose.vercel.app" class="cs-preview-canvas animate-blurIn" role="img" style="width: 100%; height: 100%;" width="1440" height="900" data-preview-src="../assets/images/preview-swingstatspro.png"></canvas>
+
+            <!-- Interactive Hover Overlay with Launch Action -->
+            <div class="cs-preview-hover-overlay">
+              <a href="https://swing-pro-rose.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-hover-launch-card">
+                <span>Explore Live Platform</span>
+                <span class="launch-icon">↗</span>
+              </a>
+            </div>
+
+            <div class="cs-window-footer-bar">
+              <div class="cs-window-status">
+                <span class="status-indicator"></span>
+                <span>Verified Production UI Preview • 1440×900 Capture</span>
+              </div>
+              <a href="https://swing-pro-rose.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-window-launch-link">
+                <span>Open Live Platform</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sticky Narrative Navigation (The 6-Part Framework) -->
+    <nav class="cs-story-nav" aria-label="Case Study Sections">
+      <a href="#problem" class="cs-story-link active">
+        <span class="link-num">01</span>
+        <span>The Problem</span>
+      </a>
+      <a href="#solution" class="cs-story-link">
+        <span class="link-num">02</span>
+        <span>The Solution</span>
+      </a>
+      <a href="#approach" class="cs-story-link">
+        <span class="link-num">03</span>
+        <span>The Approach</span>
+      </a>
+      <a href="#architecture" class="cs-story-link">
+        <span class="link-num">04</span>
+        <span>The Architecture</span>
+      </a>
+      <a href="#data-gathering" class="cs-story-link">
+        <span class="link-num">05</span>
+        <span>The Data Gathering</span>
+      </a>
+      <a href="#future-scope" class="cs-story-link">
+        <span class="link-num">06</span>
+        <span>The Future Business Scope</span>
+      </a>
+    </nav>
+
+    <!-- =========================================================
+         SECTION 1: THE PROBLEM
+         ========================================================= -->
+    <section id="problem" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 01 • Business Friction</div>
+        <h2 class="cs-section-title">The Problem: Eliminating the 90-Minute Post-Round Wait</h2>
+        <p class="cs-section-tagline">Why manual paper tournament scoring kills the excitement of competitive golf.</p>
+      </div>
+
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">🎯 The Target User</h3>
+          <p class="cs-card-text">
+            Golf club committees, corporate tournament organizers, PGA teaching professionals, and amateur players competing in 50- to 150-player events.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">⚠️ The Paper Card Bottleneck</h3>
+          <p class="cs-card-text">
+            Tournaments rely on paper cards collected at the 18th hole. Committee staff spend 1.5 to 2 hours deciphering messy handwriting and calculating handicaps manually.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">💸 Lost Tournament Drama</h3>
+          <p class="cs-card-text">
+            Clubhouse spectators and golfers have zero idea who is leading until the evening banquet, killing the live competitive energy of the sport.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 2: THE SOLUTION
+         ========================================================= -->
+    <section id="solution" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 02 • Core Product Value</div>
+        <h2 class="cs-section-title">The Solution: Live Mobile Scoring &amp; Clubhouse TV Broadcasts</h2>
+        <p class="cs-section-tagline">Real-time leaderboards, automated handicap rules, and instant post-round celebrations.</p>
+      </div>
+
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">📱 Live Mobile Scoring</h3>
+          <p class="cs-card-text">
+            One designated marker per group records hole-by-hole strokes in a high-contrast interface built specifically for bright outdoor sunlight.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">📺 4K Clubhouse TV Broadcast</h3>
+          <p class="cs-card-text">
+            Full-screen auto-scrolling leaderboard displaying live rankings, hole-in-one alerts, and sponsor banners on clubhouse television screens.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">⚡ Instant Rule Calculus</h3>
+          <p class="cs-card-text">
+            Automated scoring engine handles Gross, Net, Modified Stableford, Scramble, and Peoria handicap systems with zero delay.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 3: THE APPROACH
+         ========================================================= -->
+    <section id="approach" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 03 • Strategic Execution</div>
+        <h2 class="cs-section-title">The Approach: Software Simplicity Over Hardware Overkill</h2>
+        <p class="cs-section-tagline">Delivering 99% of live tournament value through accessible web apps without expensive sensor hardware.</p>
+      </div>
+
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">🚫 Why Hardware Fails</h3>
+          <p class="cs-card-text">
+            On-course sensors and camera trackers cost thousands of dollars, suffer from battery drain, and slow down play. A mobile web app works on any phone instantly.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">⚡ 5-Second Tee Box UX</h3>
+          <p class="cs-card-text">
+            Golfers want to focus on their swing. The interface requires just a single tap per player, completing group hole entry in under 5 seconds.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">🛡️ Sub-300ms WebSockets</h3>
+          <p class="cs-card-text">
+            Used real-time WebSocket pub/sub broadcasting instead of HTTP polling, ensuring instant leaderboard updates when players sink their 18th putt.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 4: THE ARCHITECTURE
+         ========================================================= -->
+    <section id="architecture" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 04 • System Engineering</div>
+        <h2 class="cs-section-title">The Architecture: Real-Time Scoring &amp; Broadcast Data Flow</h2>
+        <p class="cs-section-tagline">Architecture and user journey from first tee to trophy ceremony.</p>
+      </div>
+
+      <!-- Pipeline Visualization -->
+      <div class="pipeline-viz-container">
+        <div class="pipeline-viz-title">⚡ Real-Time Scoring &amp; Broadcast Data Flow</div>
+        <div class="pipeline-flow">
+          <div class="pipeline-node">
+            <span class="p-node-step">Tee Box</span>
+            <span class="p-node-title">Mobile Score Input</span>
+            <span class="p-node-sub">Hole strokes &amp; putts</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node node-highlight">
+            <span class="p-node-step">Engine</span>
+            <span class="p-node-title">Handicap Calculus</span>
+            <span class="p-node-sub">Stroke index / Stableford</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node">
+            <span class="p-node-step">Broadcast</span>
+            <span class="p-node-title">WebSocket Sync</span>
+            <span class="p-node-sub">&lt; 300ms pub/sub dispatch</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node node-highlight">
+            <span class="p-node-step">Clubhouse</span>
+            <span class="p-node-title">Live TV Leaderboard</span>
+            <span class="p-node-sub">Full screen presentation</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node">
+            <span class="p-node-step">Analytics</span>
+            <span class="p-node-title">Player Performance</span>
+            <span class="p-node-sub">GIR, Fairways, Scrambling</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">⛳ Multi-Format Tournament Engine</h3>
+          <p class="cs-card-text">
+            Supports Individual Stroke Play, Better-Ball, Scramble, Modified Stableford, and System 36/Peoria handicap adjustments simultaneously.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">📺 TV Broadcast Mode</h3>
+          <p class="cs-card-text">
+            A specialized widescreen layout designed for 4K clubhouse televisions, with auto-scrolling leaderboard rankings, sponsor branding, and hole-in-one alerts.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">📈 Player Performance Cards</h3>
+          <p class="cs-card-text">
+            Post-round analytics displaying Greens in Regulation (GIR), Fairways Hit percentage, putting averages, and hole-by-hole scoring trends.
+          </p>
+        </div>
+      </div>
+
+      <div class="contribution-box">
+        <div class="contribution-title">Pranav's Individual Architectural Contribution</div>
+        <div class="contribution-text">
+          Leveraged prior domain experience at K&amp;A Golf Pvt Ltd to architect the full platform: built the tournament calculation state machine in Node.js, designed the real-time WebSocket leaderboard broadcaster, and implemented the high-contrast outdoor mobile scoring interface.
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 5: THE DATA GATHERING
+         ========================================================= -->
+    <section id="data-gathering" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 05 • Input Telemetry &amp; Ingestion</div>
+        <h2 class="cs-section-title">The Data Gathering: Course Telemetry &amp; Player Scoring</h2>
+        <p class="cs-section-tagline">How golf course slope parameters, hole-by-hole scores, and telemetry feeds are ingested.</p>
+      </div>
+
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">⛳ Course Slope &amp; Rating Feed</h3>
+          <p class="cs-card-text">
+            Ingests USGA/WHS course ratings, tee box yardages, hole pars, and stroke index difficulty allocations across all 18 holes.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">📱 On-Course Live Scores</h3>
+          <p class="cs-card-text">
+            Captures gross strokes, putts, penalty counts, and fairway accuracy indicators logged hole-by-hole from players' mobile devices.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">🎯 Simulator Telemetry Integration</h3>
+          <p class="cs-card-text">
+            Ingests launch monitor telemetry feeds (ball velocity, launch angle, clubhead speed, spin axis) for indoor simulator competitions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 6: THE FUTURE BUSINESS SCOPE
+         ========================================================= -->
+    <section id="future-scope" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 06 • Scalability &amp; Commercialization</div>
+        <h2 class="cs-section-title">The Future Business Scope: Multi-Round League Operations</h2>
+        <p class="cs-section-tagline">Expanding from single-day events to season-long corporate golf leagues.</p>
+      </div>
+
+      <div class="roadmap-timeline-grid">
+        <div class="roadmap-card">
+          <span class="roadmap-period">Phase 01</span>
+          <h4 class="roadmap-title">Sponsor Overlay Ad Engine</h4>
+          <p class="roadmap-desc">
+            Allow corporate sponsors (auto brands, private banks) to rotate dynamic video and banner ads across clubhouse screens.
+          </p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-period">Phase 02</span>
+          <h4 class="roadmap-title">GPS Green Distance Overlay</h4>
+          <p class="roadmap-desc">
+            Integrate satellite golf course polygons to display Front/Center/Back green yardages directly on the mobile scorecard interface.
+          </p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-period">Phase 03</span>
+          <h4 class="roadmap-title">Season-Long League Standings</h4>
+          <p class="roadmap-desc">
+            FedEx Cup-style season point tracking for recurring weekend groups and corporate golf societies over 12 to 24 fixtures.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Calculator -->
+      <div class="calculator-container" data-model-type="per-unit" data-unit-cost="2.00">
+        <div class="calc-header">
+          <h3 class="calc-title">Tournament Revenue &amp; Margin Simulator</h3>
+          <p class="calc-subtext">Adjust the projected number of tournaments per month and average license fee per event to calculate monthly revenue and net contribution.</p>
+        </div>
+
+        <div class="calc-layout">
+          <div class="calc-inputs">
+            <div class="calc-input-group">
+              <div class="calc-label-row">
+                <span>Monthly Tournaments Hosted:</span>
+                <span class="calc-current-val" id="calc-vol-val">40</span>
+              </div>
+              <input type="range" class="calc-range" id="calc-vol" min="5" max="250" step="5" value="40">
+            </div>
+
+            <div class="calc-input-group">
+              <div class="calc-label-row">
+                <span>Average Fee per Tournament:</span>
+                <span class="calc-current-val" id="calc-price-val">$199.00</span>
+              </div>
+              <input type="range" class="calc-range" id="calc-price" min="99" max="499" step="10" value="199">
+            </div>
+
+            <div class="calc-formula-note">
+              Model assumption: Cloud server and WebSocket bandwidth COGS estimated at $2.00 per tournament event.
+            </div>
+          </div>
+
+          <div class="calc-outputs">
+            <div class="output-row">
+              <span class="output-label">Monthly Gross Revenue:</span>
+              <span class="output-val" id="out-mrr">$7,960</span>
+            </div>
+            <div class="output-row">
+              <span class="output-label">Estimated Server COGS:</span>
+              <span class="output-val" style="color: var(--text-muted);" id="out-cogs">$80</span>
+            </div>
+            <div class="output-row">
+              <span class="output-label">Net Contribution:</span>
+              <span class="output-val highlight" id="out-contribution">$7,880</span>
+            </div>
+            <div class="output-row">
+              <span class="output-label">Gross Margin Percentage:</span>
+              <span class="output-val" style="color: var(--yellow-subtle);" id="out-margin">99.0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conversion Box -->
+      <div class="cs-conversion-cta">
+        <div class="cta-tag">Let's Connect</div>
+        <h3 class="cta-title">Organizing a Golf Event or Sports Platform?</h3>
+        <p class="cta-subtitle">
+          Let's discuss real-time scoring architecture, sports analytics, or customized tournament leaderboard software.
+        </p>
+        <div class="cta-actions">
+          <a href="../assets/docs/swingstatspro-case-study.pdf" download="SwingStatsPro-Case-Study.pdf" class="cta-btn-pdf" title="Download SwingStatsPro Case Study PDF">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            <span>Download PDF Summary</span>
+          </a>
+          <a href="https://wa.me/919821921465?text=Hi%20Pranav,%20saw%20your%20SwingStatsPro%20case%20study%20and%20would%20love%20to%20discuss%20sports%20tech." target="_blank" rel="noopener noreferrer" class="cta-btn-gold">
+            <span>Book a Conversation</span>
+            <span>💬</span>
+          </a>
+          <a href="https://swing-pro-rose.vercel.app/" target="_blank" rel="noopener noreferrer" class="cta-btn-ghost">
+            <span>Explore SwingStatsPro</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Pagination Footer -->
+      <div class="cs-pagination-footer">
+        <a href="the-wisely-app.html" class="cs-page-nav-card">
+          <span class="cs-page-nav-direction">← Previous Case Study</span>
+          <span class="cs-page-nav-name">The Wisely App</span>
+        </a>
+        <a href="shipcargo.html" class="cs-page-nav-card" style="text-align: right;">
+          <span class="cs-page-nav-direction">Next Case Study →</span>
+          <span class="cs-page-nav-name">ShipCargo</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ==========================================================================
+       CONNECT MODAL DIALOG
+       ========================================================================== -->
+  <div class="connect-modal-overlay" id="connect-modal">
+    <div class="connect-dialog">
+      <div class="connect-dialog-header">
+        <h3 class="connect-dialog-title">Let's Connect &amp; Collaborate</h3>
+        <button class="connect-dialog-close" id="connect-modal-close" title="Close Modal">✕</button>
+      </div>
+
+      <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+        I am currently available as an <strong>Immediate Joiner</strong> for consulting engagements, analytics leadership, and full-time opportunities. Based in Delhi, India, with complete openness to relocation and remote positions globally.
+      </p>
+
+      <div class="direct-email-box">
+        <a href="mailto:pranavghosh19@gmail.com" class="email-address-text" style="text-decoration: none; color: inherit;">pranavghosh19@gmail.com</a>
+        <button id="btn-copy-email" class="btn-copy-email">COPY EMAIL</button>
+      </div>
+
+      <div class="connect-links-row">
+        <a href="https://wa.me/919821921465?text=Hi%20Pranav%2C%20got%20your%20number%20from%20your%20Portfolio.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" id="btn-whatsapp-connect">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-12.416c-5.514 0-10 4.486-10 10 0 1.76.459 3.413 1.261 4.856l-1.3 4.76 4.887-1.281c1.395.763 2.985 1.198 4.673 1.198 5.514 0 10-4.486 10-10s-4.486-10-10-10z"/>
+          </svg>
+          <span>WhatsApp Chat</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1pM4QU5h2h_4ncfhvDfFU4LmVK_NWsJRH/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lets-connect" style="padding: 0.65rem 1.4rem; font-size: 0.85rem;">
+          <span>📄 Download CV (PDF)</span>
+        </a>
+        <a href="https://www.linkedin.com/in/pranavghosh19/" target="_blank" rel="noopener noreferrer" class="nav-secondary-btn">
+          <span>LinkedIn ↗</span>
+        </a>
+        <a href="https://github.com/PranavGhosh19" target="_blank" rel="noopener noreferrer" class="nav-secondary-btn">
+          <span>GitHub ↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="case-study.js"></script>
+</body>
+</html>

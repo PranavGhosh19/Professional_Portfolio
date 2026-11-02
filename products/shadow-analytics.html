@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow Analytics Case Study | AI Document Intelligence & Data Extraction</title>
+  <meta name="description" content="Detailed engineering and business case study of Shadow Analytics: an end-to-end AI document intelligence platform turning unstructured PDFs into validated, auditable enterprise data.">
+  <meta name="author" content="Pranav Ghosh">
+  <meta property="og:title" content="Shadow Analytics — AI Document Intelligence Platform Case Study">
+  <meta property="og:description" content="How Shadow Analytics achieved 90-98% extraction accuracy and an 85% reduction in manual document review effort.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+  <div class="bg-atmosphere"></div>
+
+  <!-- ==========================================================================
+       DASHBOARD TOP NAVBAR
+       Left: PranavGhosh | Centre: Role Switcher | Right: Let's Connect
+       ========================================================================== -->
+  <header class="dashboard-navbar">
+    
+    <!-- Left: PranavGhosh -->
+    <div class="nav-left">
+      <button class="nav-toggle-sidebar-btn" id="mobile-sidebar-toggle" title="Toggle Navigation Sidebar">
+        <span>☰</span>
+      </button>
+
+      <a href="../index.html#overview" class="brand-anchor">
+        <div class="brand-avatar-mini">PG</div>
+        <div class="brand-text-name">Pranav<span>Ghosh</span></div>
+      </a>
+    </div>
+
+    <!-- Centre: Two separate role buttons with Liquid Glass Sliding Track -->
+    <div class="nav-centre">
+      <div class="nav-role-slider-track" id="nav-role-slider-track" data-mode="builder">
+        <div class="nav-role-slider-thumb" id="nav-role-slider-thumb"></div>
+        <button class="nav-role-pill" data-mode="consultant" id="nav-pill-consultant" type="button" title="Switch to Data &amp; AI Consultant view">
+          <span class="nav-centre-dot"></span>
+          <span>Data &amp; AI Consultant</span>
+        </button>
+        <button class="nav-role-pill nav-role-pill-builder active" data-mode="builder" id="nav-pill-builder" type="button" title="Switch to AI Product Builder view">
+          <span class="nav-centre-dot dot-yellow"></span>
+          <span>AI Product Builder</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right: Download PDF & Let's Connect Button -->
+    <div class="nav-right" style="display: flex; align-items: center; gap: 0.65rem;">
+      <a href="../assets/docs/shadow-analytics-case-study.pdf" download="Shadow-Analytics-Case-Study.pdf" class="nav-download-pdf-btn" title="Download Shadow Analytics 1-Page Case Study PDF">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        <span>Download PDF</span>
+      </a>
+      <button id="btn-open-connect-modal" class="btn-lets-connect" title="Connect with Pranav">
+        <span>Let's Connect</span>
+        <span>→</span>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- ==========================================================================
+       SECONDARY SUB-NAVBAR: SHOWING PRODUCTS (Direct 1-Click Platform Switcher)
+       ========================================================================== -->
+  <nav class="cs-products-subnav" aria-label="AI Products Directory">
+    <div class="cs-subnav-container">
+      <div class="cs-subnav-track">
+        <a href="shadow-analytics.html" class="cs-subnav-pill active">
+          <span class="cs-subnav-icon">📄</span>
+          <span class="cs-subnav-name">Shadow Analytics</span>
+          <span class="cs-subnav-tag">Doc AI</span>
+        </a>
+        <a href="the-wisely-app.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">💳</span>
+          <span class="cs-subnav-name">The Wisely App</span>
+          <span class="cs-subnav-tag">Finance</span>
+        </a>
+        <a href="swingstatspro.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">⛳</span>
+          <span class="cs-subnav-name">SwingStatsPro</span>
+          <span class="cs-subnav-tag">Sports</span>
+        </a>
+        <a href="shipcargo.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">🚢</span>
+          <span class="cs-subnav-name">ShipCargo</span>
+          <span class="cs-subnav-tag">Logistics</span>
+        </a>
+        <a href="torque-care.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">🚗</span>
+          <span class="cs-subnav-name">Torque Care</span>
+          <span class="cs-subnav-tag">Auto Care</span>
+        </a>
+        <a href="nirvana.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">🧘</span>
+          <span class="cs-subnav-name">Nirvana</span>
+          <span class="cs-subnav-tag">Health</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="case-study-wrapper">
+
+    <!-- Hero Header -->
+    <section class="cs-hero">
+      <div class="cs-hero-topline">
+        <div class="cs-badge-group">
+          <span class="cs-badge">Case Study #01</span>
+          <span class="cs-badge badge-live">
+            <span class="pulse-dot"></span>
+            <span>Production Deployment</span>
+          </span>
+        </div>
+        <span class="cs-badge" style="background: rgba(0,0,0,0.04); color: var(--text-secondary); border-color: var(--border-card);">Document Intelligence &amp; LLMs</span>
+      </div>
+
+      <h1 class="cs-hero-title">Shadow Analytics</h1>
+      <p class="cs-hero-subtitle">
+        An AI-powered document intelligence pipeline that transforms unstructured contracts, invoices, and financial filings into structured, auditable, and confidence-scored enterprise data.
+      </p>
+
+      <!-- Redesigned Hero Meta & Live Web Preview Window -->
+      <div class="cs-live-window-stage">
+        
+        <!-- Meta Specification Strip -->
+        <div class="cs-live-meta-strip">
+          <div class="cs-meta-pill">
+            <span class="cs-meta-pill-label">Positioning</span>
+            <span class="cs-meta-pill-val">Document Intelligence &amp; LLMs</span>
+          </div>
+          <div class="cs-meta-pill">
+            <span class="cs-meta-pill-label">Role</span>
+            <span class="cs-meta-pill-val">Founder &amp; AI Architect</span>
+          </div>
+          <div class="cs-meta-pill">
+            <span class="cs-meta-pill-label">Core Tech</span>
+            <span class="cs-meta-pill-val">Python • OCR • Gemini • RAG</span>
+          </div>
+          <div class="cs-meta-pill cs-meta-pill-cta">
+            <span class="cs-meta-pill-label">Live Deployment</span>
+            <a href="https://shadowanalytics19.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-live-url-anchor" title="Open full platform in new window">
+              <span class="live-ping-dot"></span>
+              <span>shadowanalytics19.vercel.app</span>
+              <span>↗</span>
+            </a>
+          </div>
+          <div class="cs-meta-pill cs-meta-pill-pdf">
+            <span class="cs-meta-pill-label">Executive One-Pager</span>
+            <a href="../assets/docs/shadow-analytics-case-study.pdf" download="Shadow-Analytics-Case-Study.pdf" class="cs-pdf-download-anchor" title="Download Shadow Analytics Case Study PDF">
+              <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                </svg>
+                <span>Download PDF</span>
+              </span>
+              <span class="cs-pdf-badge-tag">PDF</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sleek macOS-Style Live Web Window -->
+        <div class="cs-web-window">
+          <!-- Window Header Bar -->
+          <div class="cs-window-chrome">
+            <div class="window-traffic-lights">
+              <span class="traffic-light light-red" title="Close"></span>
+              <span class="traffic-light light-yellow" title="Minimize"></span>
+              <span class="traffic-light light-green" title="Expand"></span>
+            </div>
+
+            <!-- Address Bar with SSL Lock -->
+            <div class="window-address-bar">
+              <span class="ssl-lock" title="Secure SSL Connection">🔒</span>
+              <span class="address-prefix">https://</span>
+              <span class="address-host">www.shadowanalytics.in</span>
+              <span class="window-badge-live">LIVE APPLICATION</span>
+            </div>
+
+            <!-- Window Quick Actions -->
+            <div class="window-actions">
+              <button type="button" class="window-action-btn btn-refresh-window" title="Reload Web Window" aria-label="Reload Web Window">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                </svg>
+              </button>
+              <a href="https://shadowanalytics19.vercel.app/" target="_blank" rel="noopener noreferrer" class="window-action-btn" title="Open in New Tab" aria-label="Open in New Tab">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Window Viewport with Canvas Screenshot Preview -->
+          <div class="cs-window-viewport">
+            <canvas aria-hidden="true" aria-label="Preview Screenshot of www.shadowanalytics.in" class="cs-preview-canvas animate-blurIn" role="img" style="width: 100%; height: 100%;" width="1440" height="900" data-preview-src="../assets/images/preview-shadowanalytics.png"></canvas>
+
+            <!-- Interactive Hover Overlay with Launch Action -->
+            <div class="cs-preview-hover-overlay">
+              <a href="https://shadowanalytics19.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-hover-launch-card">
+                <span>Explore Live Platform</span>
+                <span class="launch-icon">↗</span>
+              </a>
+            </div>
+
+            <div class="cs-window-footer-bar">
+              <div class="cs-window-status">
+                <span class="status-indicator"></span>
+                <span>Verified Production UI Preview • 1440×900 Capture</span>
+              </div>
+              <a href="https://shadowanalytics19.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-window-launch-link">
+                <span>Open Live Platform</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sticky Narrative Navigation (The 6-Part Framework) -->
+    <nav class="cs-story-nav" aria-label="Case Study Sections">
+      <a href="#problem" class="cs-story-link active">
+        <span class="link-num">01</span>
+        <span>The Problem</span>
+      </a>
+      <a href="#solution" class="cs-story-link">
+        <span class="link-num">02</span>
+        <span>The Solution</span>
+      </a>
+      <a href="#approach" class="cs-story-link">
+        <span class="link-num">03</span>
+        <span>The Approach</span>
+      </a>
+      <a href="#architecture" class="cs-story-link">
+        <span class="link-num">04</span>
+        <span>The Architecture</span>
+      </a>
+      <a href="#data-gathering" class="cs-story-link">
+        <span class="link-num">05</span>
+        <span>The Data Gathering</span>
+      </a>
+      <a href="#future-scope" class="cs-story-link">
+        <span class="link-num">06</span>
+        <span>The Future Business Scope</span>
+      </a>
+    </nav>
+
+    <!-- =========================================================
+         SECTION 1: THE PROBLEM
+         ========================================================= -->
+    <section id="problem" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 01 • Business Friction</div>
+        <h2 class="cs-section-title">The Problem: The Multi-Billion Dollar PDF Trap</h2>
+        <p class="cs-section-tagline">Why manual document reading paralyzes finance, legal, and enterprise compliance operations.</p>
+      </div>
+
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">🎯 The Target User</h3>
+          <p class="cs-card-text">
+            Enterprise procurement teams, accounts payable auditors, and compliance analysts ingesting 500 to 15,000 unstructured PDFs every month.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">⚠️ Why OCR Breaks</h3>
+          <p class="cs-card-text">
+            Documents arrive in unpredictable formats—scanned images, rotated pages, multi-column tables. Legacy template-based OCR fails whenever layouts shift by even 5 pixels.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">💸 The High Cost</h3>
+          <p class="cs-card-text">
+            A mid-sized team processing 2,500 documents at 30 minutes each burns 1,250 labor hours ($40,000/month) with a 4–8% typographical error rate.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 2: THE SOLUTION
+         ========================================================= -->
+    <section id="solution" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 02 • Core Product Value</div>
+        <h2 class="cs-section-title">The Solution: End-to-End Auditable Intelligence</h2>
+        <p class="cs-section-tagline">Transforming raw unstructured PDF streams into confidence-scored, ERP-ready tabular data.</p>
+      </div>
+
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">⚡ 8-Second Extraction</h3>
+          <p class="cs-card-text">
+            Extracts key entities, nested invoice line items, and payment terms into clean JSON schemas in under 8 seconds.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">📐 Bounding Box Verification</h3>
+          <p class="cs-card-text">
+            Clicking any extracted figure instantly highlights its exact pixel bounding box on the original PDF canvas for 100% auditability.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">🔍 Exception-Only Workflow</h3>
+          <p class="cs-card-text">
+            Calibrated confidence thresholds flag low-confidence fields for human review, reducing manual effort by ~85% while maintaining 98%+ accuracy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 3: THE APPROACH
+         ========================================================= -->
+    <section id="approach" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 03 • Strategic Execution</div>
+        <h2 class="cs-section-title">The Approach: Audited Schemas Over Chatbot Toys</h2>
+        <p class="cs-section-tagline">Why predictable tabular schemas and verified provenance beat conversational chatbots.</p>
+      </div>
+
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">🚫 Why Chatbots Fail</h3>
+          <p class="cs-card-text">
+            Enterprise operators don't want to chat with PDFs. Chatting requires prompt formulation on every page. Teams need predictable tabular columns.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">🤖 Hybrid OCR + LLM Strategy</h3>
+          <p class="cs-card-text">
+            Paired Tesseract OCR coordinate tokenization with Google Gemini Multimodal LLMs under strict JSON schema constraints to eliminate hallucinations.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">🛡️ Trade-offs Evaluated</h3>
+          <p class="cs-card-text">
+            Rejected brittle heuristic regex rules and costly fine-tuned model hosting in favor of zero-shot prompt engineering with spatial RAG indexing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 4: THE ARCHITECTURE
+         ========================================================= -->
+    <section id="architecture" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 04 • System Engineering</div>
+        <h2 class="cs-section-title">The Architecture: 7-Stage Intelligence Pipeline</h2>
+        <p class="cs-section-tagline">From raw byte stream to confidence-scored, ERP-ready tabular data.</p>
+      </div>
+
+      <!-- Implemented Workflow Architecture -->
+      <div class="pipeline-viz-container">
+        <div class="pipeline-viz-title">⚡ Implemented 7-Stage Data Pipeline Architecture</div>
+        <div class="pipeline-flow">
+          <div class="pipeline-node">
+            <span class="p-node-step">Stage 01</span>
+            <span class="p-node-title">Upload &amp; Preprocess</span>
+            <span class="p-node-sub">PDF/PNG deskew, binarization</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node">
+            <span class="p-node-step">Stage 02</span>
+            <span class="p-node-title">OCR Engine</span>
+            <span class="p-node-sub">Coordinate text tokenization</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node node-highlight">
+            <span class="p-node-step">Stage 03</span>
+            <span class="p-node-title">LLM Schema Engine</span>
+            <span class="p-node-sub">Gemini 1.5 Flash structured JSON</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node">
+            <span class="p-node-step">Stage 04</span>
+            <span class="p-node-title">Semantic RAG</span>
+            <span class="p-node-sub">Chunked vector retrieval</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node node-highlight">
+            <span class="p-node-step">Stage 05</span>
+            <span class="p-node-title">Confidence Scoring</span>
+            <span class="p-node-sub">0–100% calibration threshold</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node">
+            <span class="p-node-step">Stage 06</span>
+            <span class="p-node-title">Human-in-Loop</span>
+            <span class="p-node-sub">Bounding box verification</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node">
+            <span class="p-node-step">Stage 07</span>
+            <span class="p-node-title">Export / API</span>
+            <span class="p-node-sub">Excel, CSV &amp; Webhook payload</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">📐 Bounding Box Traceability</h3>
+          <p class="cs-card-text">
+            Clicking on any extracted field instantly pans and highlights the exact bounding box polygon on the document preview canvas.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">🎛️ Custom Extraction Schemas</h3>
+          <p class="cs-card-text">
+            Users define extraction schemas visually—such as adding a field for "Net 30 Discount" or "Jurisdiction"—without writing code.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">📊 Multi-Document Grid</h3>
+          <p class="cs-card-text">
+            Aggregates extracted rows across hundreds of processed PDFs in an interactive table with discrepancy sorting and Excel export.
+          </p>
+        </div>
+      </div>
+
+      <!-- Individual Contribution Callout -->
+      <div class="contribution-box">
+        <div class="contribution-title">Pranav's Individual Architectural Contribution</div>
+        <div class="contribution-text">
+          Conceived, designed, and developed the end-to-end platform as solo architect and engineer: designed the Python FastAPI backend, implemented the dual-pass OCR bounding box normalizer, engineered the Gemini system prompts for zero-shot tabular extraction, built the reactive Next.js review interface, and deployed the production instance to Vercel.
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 5: THE DATA GATHERING
+         ========================================================= -->
+    <section id="data-gathering" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 05 • Input Telemetry &amp; Ingestion</div>
+        <h2 class="cs-section-title">The Data Gathering: Corpus Ingestion &amp; Validation</h2>
+        <p class="cs-section-tagline">How enterprise documents are collected, spatialized, and evaluated against ground truth.</p>
+      </div>
+
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">📥 Ingestion Channels</h3>
+          <p class="cs-card-text">
+            Direct browser drag-and-drop, automated email inbox attachments, and REST API endpoints receiving multi-page PDFs, TIFFs, and PNG scans.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">🔬 Coordinate Normalization</h3>
+          <p class="cs-card-text">
+            Tokenizes text and bounding box geometries via Tesseract OCR, normalizing DPI differences and rotation angles into uniform polygons.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">📊 Benchmark Evaluation</h3>
+          <p class="cs-card-text">
+            Tested on 220+ ground-truth enterprise documents (invoices, NDAs, bills of lading), verifying 90–98% numeric accuracy and &lt;8s turnaround.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 6: THE FUTURE BUSINESS SCOPE
+         ========================================================= -->
+    <section id="future-scope" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 06 • Scalability &amp; Commercialization</div>
+        <h2 class="cs-section-title">The Future Business Scope: Autonomous Enterprise Workflows</h2>
+        <p class="cs-section-tagline">Scaling from isolated document extraction into self-healing enterprise workflow automation.</p>
+      </div>
+
+      <div class="roadmap-timeline-grid">
+        <div class="roadmap-card">
+          <span class="roadmap-period">Phase 01</span>
+          <h4 class="roadmap-title">3-Way Automated Reconciliation</h4>
+          <p class="roadmap-desc">
+            Cross-reference extracted invoice totals against Purchase Orders and Goods Receipt Notes (GRN) to catch billing discrepancies before payment.
+          </p>
+        </div>
+        <div class="roadmap-card">
+          <span class="roadmap-period">Phase 02</span>
+          <h4 class="roadmap-title">Direct ERP Synchronization</h4>
+          <p class="roadmap-desc">
+            Direct two-way push to SAP, NetSuite, and QuickBooks ledgers via standard OAuth connectors, eliminating manual CSV export/import steps.
+          </p>
+        </div>
+        <div class="roadmap-card">
+          <span class="roadmap-period">Phase 03</span>
+          <h4 class="roadmap-title">Self-Learning Accuracy Loops</h4>
+          <p class="roadmap-desc">
+            Human bounding box corrections feed vector few-shot memory, boosting future extraction accuracy on recurring vendor layouts automatically.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Revenue Model Calculator -->
+      <div class="calculator-container" data-model-type="per-unit" data-unit-cost="0.018">
+        <div class="calc-header">
+          <h3 class="calc-title">Interactive Revenue &amp; Margin Simulator</h3>
+          <p class="calc-subtext">Adjust document volume and per-page pricing to inspect projected Monthly Recurring Revenue (MRR), COGS, and Contribution Margin.</p>
+        </div>
+
+        <div class="calc-layout">
+          <div class="calc-inputs">
+            <div class="calc-input-group">
+              <div class="calc-label-row">
+                <span>Monthly Pages Processed:</span>
+                <span class="calc-current-val" id="calc-vol-val">10,000</span>
+              </div>
+              <input type="range" class="calc-range" id="calc-vol" min="1000" max="100000" step="1000" value="10000">
+            </div>
+
+            <div class="calc-input-group">
+              <div class="calc-label-row">
+                <span>Blended Fee per Page:</span>
+                <span class="calc-current-val" id="calc-price-val">$0.18</span>
+              </div>
+              <input type="range" class="calc-range" id="calc-price" min="0.05" max="0.50" step="0.01" value="0.18">
+            </div>
+
+            <div class="calc-formula-note">
+              Model assumption: Variable delivery cost (COGS) is modeled at $0.018 per page ($0.012 LLM tokens + $0.006 OCR &amp; storage compute).
+            </div>
+          </div>
+
+          <div class="calc-outputs">
+            <div class="output-row">
+              <span class="output-label">Monthly Gross Revenue (MRR):</span>
+              <span class="output-val" id="out-mrr">$1,800</span>
+            </div>
+            <div class="output-row">
+              <span class="output-label">Variable Delivery Costs (COGS):</span>
+              <span class="output-val" style="color: var(--text-muted);" id="out-cogs">$180</span>
+            </div>
+            <div class="output-row">
+              <span class="output-label">Net Contribution Margin:</span>
+              <span class="output-val highlight" id="out-contribution">$1,620</span>
+            </div>
+            <div class="output-row">
+              <span class="output-label">Gross Margin Percentage:</span>
+              <span class="output-val" style="color: var(--yellow-subtle);" id="out-margin">90.0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conversion Box -->
+      <div class="cs-conversion-cta">
+        <div class="cta-tag">Let's Build Impact Together</div>
+        <h3 class="cta-title">Facing an Unstructured Document Bottleneck?</h3>
+        <p class="cta-subtitle">
+          Whether you're processing thousands of invoices, messy PDF contracts, or unstructured healthcare records, let's architect a custom, auditable AI extraction pipeline.
+        </p>
+        <div class="cta-actions">
+          <a href="../assets/docs/shadow-analytics-case-study.pdf" download="Shadow-Analytics-Case-Study.pdf" class="cta-btn-pdf" title="Download Shadow Analytics Case Study PDF">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            <span>Download PDF Summary</span>
+          </a>
+          <a href="https://wa.me/919821921465?text=Hi%20Pranav,%20saw%20your%20Shadow%20Analytics%20case%20study%20and%20would%20love%20to%20discuss%20an%20AI%20document%20workflow." target="_blank" rel="noopener noreferrer" class="cta-btn-gold">
+            <span>Book a Conversation</span>
+            <span>💬</span>
+          </a>
+          <a href="https://shadowanalytics19.vercel.app/" target="_blank" rel="noopener noreferrer" class="cta-btn-ghost">
+            <span>Explore Live Platform</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Pagination Footer -->
+      <div class="cs-pagination-footer">
+        <a href="../index.html#products" class="cs-page-nav-card">
+          <span class="cs-page-nav-direction">← Return</span>
+          <span class="cs-page-nav-name">AI Product Builder Overview</span>
+        </a>
+        <a href="the-wisely-app.html" class="cs-page-nav-card" style="text-align: right;">
+          <span class="cs-page-nav-direction">Next Case Study →</span>
+          <span class="cs-page-nav-name">The Wisely App</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ==========================================================================
+       CONNECT MODAL DIALOG
+       ========================================================================== -->
+  <div class="connect-modal-overlay" id="connect-modal">
+    <div class="connect-dialog">
+      <div class="connect-dialog-header">
+        <h3 class="connect-dialog-title">Let's Connect &amp; Collaborate</h3>
+        <button class="connect-dialog-close" id="connect-modal-close" title="Close Modal">✕</button>
+      </div>
+
+      <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+        I am currently available as an <strong>Immediate Joiner</strong> for consulting engagements, analytics leadership, and full-time opportunities. Based in Delhi, India, with complete openness to relocation and remote positions globally.
+      </p>
+
+      <div class="direct-email-box">
+        <a href="mailto:pranavghosh19@gmail.com" class="email-address-text" style="text-decoration: none; color: inherit;">pranavghosh19@gmail.com</a>
+        <button id="btn-copy-email" class="btn-copy-email">COPY EMAIL</button>
+      </div>
+
+      <div class="connect-links-row">
+        <a href="https://wa.me/919821921465?text=Hi%20Pranav%2C%20got%20your%20number%20from%20your%20Portfolio.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" id="btn-whatsapp-connect">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-12.416c-5.514 0-10 4.486-10 10 0 1.76.459 3.413 1.261 4.856l-1.3 4.76 4.887-1.281c1.395.763 2.985 1.198 4.673 1.198 5.514 0 10-4.486 10-10s-4.486-10-10-10z"/>
+          </svg>
+          <span>WhatsApp Chat</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1pM4QU5h2h_4ncfhvDfFU4LmVK_NWsJRH/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lets-connect" style="padding: 0.65rem 1.4rem; font-size: 0.85rem;">
+          <span>📄 Download CV (PDF)</span>
+        </a>
+        <a href="https://www.linkedin.com/in/pranavghosh19/" target="_blank" rel="noopener noreferrer" class="nav-secondary-btn">
+          <span>LinkedIn ↗</span>
+        </a>
+        <a href="https://github.com/PranavGhosh19" target="_blank" rel="noopener noreferrer" class="nav-secondary-btn">
+          <span>GitHub ↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="case-study.js"></script>
+</body>
+</html>

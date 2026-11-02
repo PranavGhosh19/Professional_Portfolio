@@ -1,0 +1,2188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pranav Ghosh — Data &amp; AI Consultant | AI Product Builder</title>
+  
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="Dashboard Portfolio of Pranav Ghosh — Data & AI Consultant at Boston Consulting Group (BCG) and AI Product Builder. Specializing in SQL, Python, Power BI, Machine Learning, and GenAI.">
+  <meta name="keywords" content="Pranav Ghosh, Data & AI Consultant, BCG, AI Product Builder, Torque Care, Niravana, Shadow Analytics, Power BI, Python, SQL, M.Sc Data Science">
+  <meta name="author" content="Pranav Ghosh">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Pranav Ghosh — Data &amp; AI Consultant | AI Product Builder">
+  <meta property="og:description" content="Executive Dashboard Portfolio of Pranav Ghosh. Experience at BCG & GlobalLogic, founder of Torque Care, Niravana, and Shadow Analytics.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon Glyph -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=4">
+
+</head>
+<body>
+
+
+  <!-- ==========================================================================
+       DASHBOARD TOP NAVBAR
+       Left: PranavGhosh | Centre: Data & AI Consultant | AI Product Builder | Right: Let's Connect
+       ========================================================================== -->
+  <header class="dashboard-navbar">
+    
+    <!-- Left: PranavGhosh -->
+    <div class="nav-left">
+      <button class="nav-toggle-sidebar-btn" id="mobile-sidebar-toggle" title="Toggle Navigation Sidebar">
+        <span>☰</span>
+      </button>
+
+      <a href="#overview" class="brand-anchor">
+        <div class="brand-avatar-mini">PG</div>
+        <div class="brand-text-name">Pranav<span>Ghosh</span></div>
+      </a>
+    </div>
+
+    <!-- Centre: Two separate role buttons with Liquid Glass Sliding Track -->
+    <div class="nav-centre">
+      <div class="nav-role-slider-track" id="nav-role-slider-track" data-mode="consultant">
+        <div class="nav-role-slider-thumb" id="nav-role-slider-thumb"></div>
+        <button class="nav-role-pill active" data-mode="consultant" id="nav-pill-consultant" type="button" title="Switch to Data &amp; AI Consultant view">
+          <span class="nav-centre-dot"></span>
+          <span>Data &amp; AI Consultant</span>
+        </button>
+        <button class="nav-role-pill nav-role-pill-builder" data-mode="builder" id="nav-pill-builder" type="button" title="Switch to AI Product Builder view">
+          <span class="nav-centre-dot dot-yellow"></span>
+          <span>AI Product Builder</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right: Let's Connect Button -->
+    <div class="nav-right">
+      <button id="btn-open-connect-modal" class="btn-lets-connect" title="Connect with Pranav">
+        <span>Let's Connect</span>
+        <span>→</span>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- ==========================================================================
+       DASHBOARD WRAPPER: SIDEBAR + MAIN CONTENT
+       ========================================================================== -->
+  <div class="dashboard-layout" data-active-page="dashboard">
+
+    <!-- ==========================================================================
+         SIDEBAR NAVIGATION (HIERARCHICAL ACCORDION & ROLE FILTERING)
+         ========================================================================== -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar" data-active-mode="consultant">
+      
+      <div class="sidebar-nav-container">
+        <div class="sidebar-section-title">Navigation Hub</div>
+
+        <!-- Direct Page: Dashboard (Landing tag removed) -->
+        <div class="nav-item-direct">
+          <button class="nav-direct-link active" data-page="dashboard" id="nav-btn-dashboard" title="Return to Dashboard">
+            <span class="group-header-label">
+              <span class="group-icon">⚡</span>
+              <span>Dashboard</span>
+            </span>
+          </button>
+        </div>
+
+        <!-- Direct Page: Journey (Does not expand) -->
+        <div class="nav-item-direct">
+          <button class="nav-direct-link" data-page="journey" id="nav-btn-journey" title="View Professional Journey">
+            <span class="group-header-label">
+              <span class="group-icon">🧭</span>
+              <span>Journey</span>
+            </span>
+          </button>
+        </div>
+
+        <!-- 1. Experience Group -->
+        <div class="nav-group" id="group-experience">
+          <button class="nav-group-header" data-target="experience" data-page="experience">
+            <span class="group-header-label">
+              <span class="group-icon">💼</span>
+              <span>Experience</span>
+            </span>
+            <span class="chevron-icon">›</span>
+          </button>
+          <div class="nav-submenu">
+            <a href="#card-bcg" class="nav-sublink" data-page="experience" data-card="card-bcg">BCG</a>
+            <a href="#card-globallogic" class="nav-sublink" data-page="experience" data-card="card-globallogic">GlobalLogic</a>
+            <a href="#card-kagolf" class="nav-sublink" data-page="experience" data-card="card-kagolf">K&amp;A</a>
+          </div>
+        </div>
+
+        <!-- 2. Projects Group -->
+        <div class="nav-group" id="group-projects">
+          <button class="nav-group-header" data-target="projects" data-page="projects">
+            <span class="group-header-label">
+              <span class="group-icon">📊</span>
+              <span>Projects</span>
+            </span>
+            <span class="chevron-icon">›</span>
+          </button>
+          <div class="nav-submenu">
+            <a href="#card-urlguard" class="nav-sublink" data-page="projects" data-card="card-urlguard">URL Guard (Malware ML)</a>
+            <a href="#card-delivery" class="nav-sublink" data-page="projects" data-card="card-delivery">Power BI Delivery Analytics</a>
+            <a href="#card-movie" class="nav-sublink" data-page="projects" data-card="card-movie">Movie Recommendation</a>
+            <a href="#card-banking" class="nav-sublink" data-page="projects" data-card="card-banking">Banking Case Study</a>
+            <a href="#card-theeye" class="nav-sublink" data-page="projects" data-card="card-theeye">The Eye Attendance</a>
+            <a href="#card-excel" class="nav-sublink" data-page="projects" data-card="card-excel">Advanced Excel Modeling</a>
+          </div>
+        </div>
+
+        <!-- 4. Skills Group -->
+        <div class="nav-group" id="group-skills">
+          <button class="nav-group-header" data-target="skills" data-page="skills">
+            <span class="group-header-label">
+              <span class="group-icon">⚡</span>
+              <span>Skills</span>
+            </span>
+            <span class="chevron-icon">›</span>
+          </button>
+          <div class="nav-submenu">
+            <a href="#card-skill-tech" class="nav-sublink" data-page="skills" data-card="card-skill-tech">Technical &amp; Programming</a>
+            <a href="#card-skill-bi" class="nav-sublink" data-page="skills" data-card="card-skill-bi">Data Visualizations &amp; BI</a>
+            <a href="#card-skill-genai" class="nav-sublink" data-page="skills" data-card="card-skill-genai">GenAI &amp; AI Products</a>
+            <a href="#card-skill-ml" class="nav-sublink" data-page="skills" data-card="card-skill-ml">Machine Learning &amp; DL</a>
+            <a href="#card-skill-de" class="nav-sublink" data-page="skills" data-card="card-skill-de">Data Engineering &amp; ETL</a>
+          </div>
+        </div>
+
+        <!-- 5. Education Group -->
+        <div class="nav-group" id="group-education">
+          <button class="nav-group-header" data-target="education" data-page="education">
+            <span class="group-header-label">
+              <span class="group-icon">🎓</span>
+              <span>Education</span>
+            </span>
+            <span class="chevron-icon">›</span>
+          </button>
+          <div class="nav-submenu">
+            <a href="#card-edu-christ" class="nav-sublink" data-page="education" data-card="card-edu-christ">M.Sc. Data Science</a>
+            <a href="#card-cert-powerbi" class="nav-sublink" data-page="education" data-card="card-cert-powerbi">Microsoft Power BI Analyst</a>
+            <a href="#card-languages" class="nav-sublink" data-page="education" data-card="card-languages">Languages Spoken</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Sticky Sidebar Footer Area with Smooth Morphing Profile -->
+      <div class="sidebar-footer-area">
+        <div class="sidebar-footer-profile" id="sidebar-footer-profile" title="Connect with Pranav Ghosh (pranavghosh19@gmail.com)">
+          <div class="sidebar-avatar-wrapper">
+            <img src="assets/images/pranav-photo.jpg" alt="Pranav Ghosh" class="sidebar-avatar-img">
+            <span class="sidebar-avatar-beacon"></span>
+          </div>
+          <div class="sidebar-profile-info">
+            <div class="sidebar-profile-name-row">
+              <span class="sidebar-profile-name">Pranav Ghosh</span>
+              <span class="sidebar-profile-arrow" title="Click to Connect">→</span>
+            </div>
+            <div class="sidebar-profile-meta-morph">
+              <div class="sidebar-profile-status status-consultant active">
+                <span class="nav-centre-dot"></span>
+                <span>Immediate Joiner</span>
+              </div>
+              <div class="sidebar-profile-status status-builder">
+                <span class="nav-centre-dot dot-yellow"></span>
+                <span>Active Founder</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ==========================================================================
+         MAIN STAGE: DASHBOARD CONTENT & CARDS
+         ========================================================================== -->
+    <main class="dashboard-main" id="overview">
+
+      <!-- ======================================================================
+           PAGE 1: DASHBOARD (LANDING PAGE VIEW)
+           ====================================================================== -->
+      <section class="page-view active" id="page-dashboard">
+
+        <!-- Landing Page Hero & Metrics Split Layout -->
+        <div class="dashboard-landing-split">
+
+          <!-- Left Column: Professional Summary & Capability Metrics -->
+          <div class="landing-main-col">
+
+            <!-- Executive Professional Summary Card -->
+            <article class="dashboard-card landing-summary-card" id="card-landing-summary">
+              <div class="landing-summary-body-wrap">
+                <div class="landing-summary-header-row">
+                  <h3 class="landing-summary-heading">Professional Summary</h3>
+                </div>
+                <p class="landing-summary-text">
+                  Business-focused <strong>AI Product Builder</strong> and <strong>Analytics Consultant</strong> with experience at <strong>BCG</strong>, <strong>GlobalLogic</strong>, and <strong>K&amp;A Golf</strong>, combining <strong>consulting</strong>, <strong>data analytics</strong>, <strong>intelligent automation</strong>, and <strong>product development</strong> to solve complex business problems. Experienced in translating ambiguous business requirements into scalable solutions using <strong>Python</strong>, <strong>SQL</strong>, <strong>Power BI</strong>, and <strong>Generative AI</strong>—from <strong>executive dashboards</strong> and <strong>automated workflows</strong> to <strong>AI-powered applications</strong>. Brings a unique blend of <strong>strategic thinking</strong>, <strong>technical execution</strong>, and <strong>product ownership</strong>, with a focus on reducing operational effort, improving decision-making, and accelerating business outcomes. Equally comfortable engaging stakeholders, <strong>architecting solutions</strong>, and <strong>shipping functional products</strong>. Ready to turn high-impact business challenges into measurable results.
+                </p>
+              </div>
+            </article>
+
+            <!-- Overview Metric KPI Cluster: Top 2 Compact Cards + Domain Card Below of Both -->
+            <div class="landing-metrics-cluster">
+              
+              <!-- Top Row: Founded Platforms & Consulting Experience (2-Card Row) -->
+              <div class="landing-metrics-top-row">
+                
+                <!-- 1. Founded Platforms -->
+                <div class="kpi-card kpi-card-compact" data-route="products" style="cursor: pointer;" title="View AI Product Builder">
+                  <div class="kpi-title-row">
+                    <span class="kpi-label">Founded Platforms</span>
+                    <span class="kpi-icon">🚀</span>
+                  </div>
+                  <div class="kpi-metric-val">6<span style="font-size: 1.1rem; color: var(--text-pure);"> Products</span></div>
+                  <div class="kpi-subtext">Shadow Analytics, Wisely, SwingStatsPro, ShipCargo, Torque Care, Nirvana</div>
+                </div>
+
+                <!-- 2. Consulting & Analytic Experience -->
+                <div class="kpi-card kpi-card-compact kpi-experience-card" data-route="experience" style="cursor: pointer;" title="View Consulting Experience">
+                  <div class="kpi-title-row">
+                    <span class="kpi-label">Consulting &amp; Analytic Experience</span>
+                    <span class="kpi-icon">💼</span>
+                  </div>
+                  <div class="kpi-metric-val">2.7+<span style="font-size: 1.1rem; color: var(--yellow-subtle);"> Yrs</span></div>
+                  <div class="kpi-subtext">Strategy Consulting, Strategy and Ops, Data, Business and Insights, Data Visualisations, Data Scientist</div>
+                </div>
+
+              </div>
+
+              <!-- Bottom: Domain Card (Horizontal Card Below of Both Cards) -->
+              <div class="kpi-card domain-card-horizontal">
+                <div class="domain-h-header">
+                  <div class="domain-h-title">
+                    <span class="kpi-label">Domain</span>
+                    <span class="kpi-icon">🏛️</span>
+                  </div>
+                  <div class="kpi-subtext domain-h-subtext">Cross-Industry Enterprise Impact</div>
+                </div>
+                <div class="domain-pills-wrap domain-h-pills">
+                  <span class="domain-pill">Retail</span>
+                  <span class="domain-pill">BFSI</span>
+                  <span class="domain-pill">People and HR Analytics</span>
+                  <span class="domain-pill">Energy</span>
+                  <span class="domain-pill">Legal</span>
+                  <span class="domain-pill">Automation</span>
+                  <span class="domain-pill">Pharma</span>
+                  <span class="domain-pill">Life Science</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Right Column: Tagline Card, Portrait Photo, & Availability -->
+          <div class="landing-portrait-col">
+            
+            <!-- 1. Dedicated Tagline Card (Above Image) -->
+            <div class="kpi-card tagline-card" id="card-tagline">
+              <div class="kpi-title-row">
+                <div class="tagline-label-wrap">
+                  <span class="tagline-pulse-dot"></span>
+                  <span class="kpi-label">Tagline</span>
+                </div>
+                <span class="kpi-icon">⚡</span>
+              </div>
+              <div class="tagline-content">
+                <div class="tagline-main-text">Exposure above Experience.</div>
+                <div class="tagline-sub-text">Turning Technical Insights into Business Impact</div>
+              </div>
+            </div>
+
+            <!-- 2. The Portrait Photo Card -->
+            <div class="landing-photo-card" id="landing-photo-card">
+              <div class="landing-photo-frame">
+                <img src="assets/images/pranav-portrait.jpg" alt="Pranav Ghosh - Data &amp; AI Consultant &amp; Product Builder" class="landing-profile-img">
+                <div class="landing-photo-overlay-glass">
+                  <div class="photo-overlay-badge">
+                    <span class="photo-active-pulse"></span>
+                    <span>Pranav Ghosh</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Availability Card - Positioned Directly Below the Image -->
+            <div class="kpi-card kpi-card-green" id="kpi-availability-card" style="cursor: pointer;" title="Click to Connect with Pranav">
+              <div class="kpi-title-row">
+                <span class="kpi-label">Availability</span>
+                <span class="kpi-green-dot" title="Active Immediate Availability"></span>
+              </div>
+              <div class="kpi-metric-val">Immediate</div>
+              <div class="kpi-subtext">Delhi, India • Open to Relocation &amp; Remote</div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+      </section>
+
+      <!-- ======================================================================
+           PAGE 2: PROFESSIONAL & PRODUCT JOURNEY (VERTICAL TIMELINE - NO SCROLL)
+           ====================================================================== -->
+      <section class="page-view dashboard-section" id="page-journey">
+        
+        <!-- Header with Title & Duration Badge on Right -->
+        <div class="section-title-bar journey-header-bar">
+          <div class="section-heading-cluster">
+            <div class="section-heading-icon">🧭</div>
+            <h2 class="section-main-heading">Professional Journey</h2>
+          </div>
+          <div class="journey-header-badge-wrap">
+            <span class="section-badge-count">Aug 2017 – Present &bull; 7 Milestones</span>
+          </div>
+        </div>
+
+        <!-- Vertical Alternating Timeline Container (Fits Screen, Zero Scroll) -->
+        <div class="journey-v-wrapper" id="journey-track-wrapper">
+          <div class="journey-v-track">
+
+            <!-- Continuous Central Timeline Axis -->
+            <div class="journey-v-axis-line"></div>
+
+            <!-- Milestone 1: Aug 2017 - Mar 2021 (LEFT) -->
+            <div class="journey-v-step step-left" id="step-bca">
+              <div class="v-step-slot slot-left">
+                <article class="dashboard-card journey-v-card" id="card-journey-bca">
+                  <div class="journey-v-date mobile-only">Aug 2017 – Mar 2021</div>
+                  <h3 class="journey-v-title">Bachelor's of Computer Application (GGSIPU)</h3>
+                </article>
+                <div class="v-connector-stem stem-left"></div>
+              </div>
+
+              <div class="v-node-wrapper">
+                <div class="v-node-badge" title="Aug 2017 – Mar 2021">
+                  <span class="v-node-icon">🎓</span>
+                </div>
+              </div>
+
+              <!-- Duration in front of tab (Right) -->
+              <div class="v-step-slot slot-right slot-duration">
+                <div class="v-connector-stem stem-right"></div>
+                <div class="journey-v-duration-badge">
+                  <span class="journey-duration-date">Aug 2017 – Mar 2021</span>
+                  <span class="journey-duration-sep">&bull;</span>
+                  <span class="journey-duration-length">3 Yrs 8 Mos</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 2: Apr 2021 - Sept 2021 (RIGHT) -->
+            <div class="journey-v-step step-right" id="step-kagolf">
+              <!-- Duration in front of tab (Left) -->
+              <div class="v-step-slot slot-left slot-duration">
+                <div class="journey-v-duration-badge">
+                  <span class="journey-duration-date">Apr 2021 – Sept 2021</span>
+                  <span class="journey-duration-sep">&bull;</span>
+                  <span class="journey-duration-length">6 Mos</span>
+                </div>
+                <div class="v-connector-stem stem-left"></div>
+              </div>
+
+              <div class="v-node-wrapper">
+                <div class="v-node-badge" title="Apr 2021 – Sept 2021">
+                  <span class="v-node-icon">⛳</span>
+                </div>
+              </div>
+
+              <div class="v-step-slot slot-right">
+                <div class="v-connector-stem stem-right"></div>
+                <article class="dashboard-card journey-v-card" id="card-journey-kagolf">
+                  <div class="journey-v-date mobile-only">Apr 2021 – Sept 2021</div>
+                  <h3 class="journey-v-title">Executive – Data Analytics &amp; Operations at K&amp;A Golf Pvt Ltd, Gurgaon</h3>
+                </article>
+              </div>
+            </div>
+
+            <!-- Milestone 3: Oct 2021 - Jul 2022 (LEFT) -->
+            <div class="journey-v-step step-left" id="step-swingstats">
+              <div class="v-step-slot slot-left">
+                <article class="dashboard-card journey-v-card" id="card-journey-swingstatspro">
+                  <div class="journey-v-date mobile-only">Oct 2021 – Jul 2022</div>
+                  <h3 class="journey-v-title">Independent Product Builder (SwingStatsPro)</h3>
+                </article>
+                <div class="v-connector-stem stem-left"></div>
+              </div>
+
+              <div class="v-node-wrapper">
+                <div class="v-node-badge" title="Oct 2021 – Jul 2022">
+                  <span class="v-node-icon">🛠️</span>
+                </div>
+              </div>
+
+              <!-- Duration in front of tab (Right) -->
+              <div class="v-step-slot slot-right slot-duration">
+                <div class="v-connector-stem stem-right"></div>
+                <div class="journey-v-duration-badge">
+                  <span class="journey-duration-date">Oct 2021 – Jul 2022</span>
+                  <span class="journey-duration-sep">&bull;</span>
+                  <span class="journey-duration-length">10 Mos</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 4: Aug 2022 - Jun 2024 (RIGHT) -->
+            <div class="journey-v-step step-right" id="step-masters">
+              <!-- Duration in front of tab (Left) -->
+              <div class="v-step-slot slot-left slot-duration">
+                <div class="journey-v-duration-badge">
+                  <span class="journey-duration-date">Aug 2022 – Jun 2024</span>
+                  <span class="journey-duration-sep">&bull;</span>
+                  <span class="journey-duration-length">1 Yr 11 Mos</span>
+                </div>
+                <div class="v-connector-stem stem-left"></div>
+              </div>
+
+              <div class="v-node-wrapper">
+                <div class="v-node-badge" title="Aug 2022 – Jun 2024">
+                  <span class="v-node-icon">📜</span>
+                </div>
+              </div>
+
+              <div class="v-step-slot slot-right">
+                <div class="v-connector-stem stem-right"></div>
+                <article class="dashboard-card journey-v-card" id="card-journey-masters">
+                  <div class="journey-v-date mobile-only">Aug 2022 – Jun 2024</div>
+                  <h3 class="journey-v-title">M.Sc in Data Science (Christ University), Bengaluru</h3>
+                </article>
+              </div>
+            </div>
+
+            <!-- Milestone 5: Jul 2024 - Sept 2025 (LEFT) -->
+            <div class="journey-v-step step-left" id="step-globallogic">
+              <div class="v-step-slot slot-left">
+                <article class="dashboard-card journey-v-card" id="card-journey-globallogic">
+                  <div class="journey-v-date mobile-only">Jul 2024 – Sept 2025</div>
+                  <h3 class="journey-v-title">Associate Analyst at GlobalLogic, Gurgaon</h3>
+                </article>
+                <div class="v-connector-stem stem-left"></div>
+              </div>
+
+              <div class="v-node-wrapper">
+                <div class="v-node-badge" title="Jul 2024 – Sept 2025">
+                  <span class="v-node-icon">💼</span>
+                </div>
+              </div>
+
+              <!-- Duration in front of tab (Right) -->
+              <div class="v-step-slot slot-right slot-duration">
+                <div class="v-connector-stem stem-right"></div>
+                <div class="journey-v-duration-badge">
+                  <span class="journey-duration-date">Jul 2024 – Sept 2025</span>
+                  <span class="journey-duration-sep">&bull;</span>
+                  <span class="journey-duration-length">1 Yr 3 Mos</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone 6: Sept 2025 - May 2026 (RIGHT) -->
+            <div class="journey-v-step step-right" id="step-bsk">
+              <!-- Duration in front of tab (Left) -->
+              <div class="v-step-slot slot-left slot-duration">
+                <div class="journey-v-duration-badge">
+                  <span class="journey-duration-date">Sept 2025 – May 2026</span>
+                  <span class="journey-duration-sep">&bull;</span>
+                  <span class="journey-duration-length">9 Mos</span>
+                </div>
+                <div class="v-connector-stem stem-left"></div>
+              </div>
+
+              <div class="v-node-wrapper">
+                <div class="v-node-badge" title="Sept 2025 – May 2026">
+                  <span class="v-node-icon">🏛️</span>
+                </div>
+              </div>
+
+              <div class="v-step-slot slot-right">
+                <div class="v-connector-stem stem-right"></div>
+                <article class="dashboard-card journey-v-card" id="card-journey-bsk">
+                  <div class="journey-v-date mobile-only">Sept 2025 – May 2026</div>
+                  <h3 class="journey-v-title">BSK Outside Consultant at PersolKelly hired for BCG, Gurgaon</h3>
+                </article>
+              </div>
+            </div>
+
+            <!-- Milestone 7: Jun 2026 - Present (LEFT - PRESENT & ENLARGED) -->
+            <div class="journey-v-step step-left step-present" id="step-ai-builder">
+              <div class="v-step-slot slot-left">
+                <article class="dashboard-card journey-v-card card-present" id="card-journey-ai-builder">
+                  <div class="journey-present-header mobile-only">
+                    <span class="journey-v-date highlight">Jun 2026 – Present</span>
+                    <span class="journey-active-badge">
+                      <span class="photo-active-pulse"></span>
+                      <span>Present</span>
+                    </span>
+                  </div>
+                  
+                  <h3 class="journey-v-title present-title">Independent AI Product Builder</h3>
+                </article>
+                <div class="v-connector-stem stem-left stem-present"></div>
+              </div>
+
+              <div class="v-node-wrapper">
+                <div class="v-node-badge node-present" title="Jun 2026 – Present">
+                  <span class="v-node-icon">🚀</span>
+                  <span class="node-beacon"></span>
+                </div>
+              </div>
+
+              <!-- Duration in front of tab (Right) -->
+              <div class="v-step-slot slot-right slot-duration">
+                <div class="v-connector-stem stem-right stem-present"></div>
+                <div class="journey-v-duration-badge duration-present">
+                  <span class="photo-active-pulse"></span>
+                  <span class="journey-duration-date">Jun 2026 – Present</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ======================================================================
+           PAGE 2: EXPERIENCE (STANDALONE VIEW)
+           ====================================================================== -->
+      <section class="page-view dashboard-section" id="page-experience">
+        <div class="section-title-bar experience-title-bar">
+          <div class="section-heading-cluster">
+            <div class="section-heading-icon">💼</div>
+            <h2 class="section-main-heading">Experience</h2>
+          </div>
+          <div class="experience-highlight-badge" title="Total Professional Experience: 2.7 Years">
+            <span class="exp-badge-pulse-dot"></span>
+            <span class="exp-badge-label">TOTAL EXPERIENCE</span>
+            <span class="exp-badge-divider">•</span>
+            <span class="exp-badge-years">2.7 Years</span>
+          </div>
+        </div>
+
+        <div class="experience-horizontal-stack">
+          
+          <!-- Horizontal Card 1: Boston Consulting Group (BCG) -->
+          <article class="dashboard-card experience-card-horizontal" id="card-bcg">
+            <!-- Left Brand Pillar: Dual Brand (PERSOLKELLY -> Hired for -> BCG) + Meta -->
+            <div class="exp-horizontal-left">
+              <div class="exp-dual-brand-wrap">
+                <a href="https://www.persolkelly.co.in/" target="_blank" rel="noopener noreferrer" class="exp-logo-container exp-logo-persolkelly" title="Visit PERSOLKELLY Consulting">
+                  <img src="assets/images/logo-persolkelly.png" alt="PERSOLKELLY Consulting Logo" class="exp-company-logo">
+                </a>
+
+                <div class="exp-hired-connector">
+                  <span class="exp-hired-line"></span>
+                  <span class="exp-hired-badge">Hired for <span class="exp-hired-arrow">↓</span></span>
+                  <span class="exp-hired-line"></span>
+                </div>
+
+                <a href="https://www.bcg.com/" target="_blank" rel="noopener noreferrer" class="exp-logo-container exp-logo-bcg" title="Visit Boston Consulting Group">
+                  <img src="assets/images/logo-bcg.png" alt="Boston Consulting Group Logo" class="exp-company-logo">
+                </a>
+              </div>
+              
+              <div class="exp-company-meta">
+                <a href="https://www.bcg.com/" target="_blank" rel="noopener noreferrer" class="exp-company-link" title="Visit Boston Consulting Group">
+                  <span>Boston Consulting Group</span>
+                  <span class="exp-link-arrow">↗</span>
+                </a>
+                <span class="card-duration-badge exp-duration">Sept 2025 – May 2026</span>
+                
+                <div class="exp-clients-badge-wrap">
+                  <span class="exp-clients-label">3 Client Engagements</span>
+                  <div class="exp-clients-pills">
+                    <span class="exp-client-pill"><span class="client-dot client-dot-bcg"></span>BCG Global HRIS</span>
+                    <span class="exp-client-pill"><span class="client-dot client-dot-visa"></span>Visa</span>
+                    <span class="exp-client-pill"><span class="client-dot client-dot-novartis"></span>Novartis</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Detail Column: Role + 3 Dedicated Client Tracks + Tech Chips -->
+            <div class="exp-horizontal-right">
+              <div class="exp-role-header">
+                <div class="exp-role-title-row">
+                  <h3 class="card-role-title">BSK Outside Consultant</h3>
+                  <span class="exp-domain-pill">FinTech • Life Sciences &amp; Pharma • People &amp; HR Analytics</span>
+                </div>
+              </div>
+
+              <p class="card-body-desc exp-summary">
+                Outside Consultant delivering automated, data-driven reporting solutions, executive telemetry dashboards, ETL lineage analysis, and commercial intelligence across 3 client engagements: <strong>BCG Global HRIS</strong>, <strong>Visa</strong>, and <strong>Novartis</strong>.
+              </p>
+
+              <!-- Track 1: BCG Global HRIS -->
+              <div class="exp-client-track">
+                <div class="exp-track-header">
+                  <span class="track-client-badge">Client 1</span>
+                  <h4 class="track-client-name">BCG Global HRIS</h4>
+                  <span class="track-focus-tag">• Replacing Workday with BCG Global HRIS — Eliminating Workday Subscription Cost &amp; Elevating Performance</span>
+                </div>
+                <p class="track-lead-desc">
+                  Developed end-to-end Power BI Business Intelligence solutions by integrating <strong>Power Apps</strong>, <strong>SharePoint</strong>, <strong>SQL</strong>, <strong>Excel</strong>, <strong>Python</strong>, <strong>REST APIs</strong>, and <strong>Microsoft Copilot Studio AI Agents</strong>, reducing manual reporting efforts by <strong>80%</strong> and improving data accessibility across 5+ business functions.
+                </p>
+                <ul class="card-bullet-points exp-bullets">
+                  <li class="card-bullet-item">
+                    <strong>Star Schema &amp; ETL Performance:</strong> Designed optimized star schema data models, advanced DAX measures, Power Query ETL pipelines, Role-Level Security (RLS), and automated refresh processes, improving dashboard performance by <strong>50%</strong> and reducing query execution time by <strong>40%</strong>.
+                  </li>
+                  <li class="card-bullet-item">
+                    <strong>Enterprise AI Agents (Copilot Studio):</strong> Created and deployed AI Agents using <strong>Microsoft Copilot Studio</strong> to automate business workflows, retrieve enterprise data, answer business queries, and streamline reporting processes, enabling faster and more intelligent decision-making.
+                  </li>
+                  <li class="card-bullet-item">
+                    <strong>Executive &amp; Client-Facing Dashboards:</strong> Built <strong>20+ client-facing dashboards</strong> featuring KPI scorecards, forecasting, drill-through analysis, decomposition trees, dynamic parameters, bookmarks, and custom visualizations, enabling leadership teams to make decisions <strong>30% faster</strong>.
+                  </li>
+                  <li class="card-bullet-item">
+                    <strong>Intelligent Workflow Automation:</strong> Automated business workflows by connecting <strong>Power Apps</strong>, <strong>SharePoint</strong>, <strong>Power BI</strong>, and Agentic AI-driven processes, eliminating repetitive data entry, increasing reporting accuracy by <strong>95%</strong>, and saving <strong>15+ hours per week</strong> of operational effort.
+                  </li>
+                  <li class="card-bullet-item">
+                    <strong>Scalable Delivery &amp; Self-Service Adoption:</strong> Collaborated with business stakeholders and clients to deliver scalable BI and AI-powered enterprise solutions, supporting <strong>100K+ records</strong> and increasing self-service analytics adoption by <strong>60%</strong> through interactive storytelling, enterprise reporting, and intelligent automation.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Track 2: Visa -->
+              <div class="exp-client-track exp-client-track-visa">
+                <div class="exp-track-header">
+                  <span class="track-client-badge">Client 2</span>
+                  <h4 class="track-client-name">Visa</h4>
+                  <span class="track-focus-tag">• Data Lineage, STTM Feasibility &amp; Tableau-to-Power BI Migration</span>
+                </div>
+                <ul class="card-bullet-points exp-bullets">
+                  <li class="card-bullet-item">
+                    <strong>KPI Extraction and Automation:</strong> Developed and utilized Python-based, AI-assisted parsing utilities to extract KPIs and their underlying column dependencies from Tableau workbooks, streamlining metadata analysis across multiple dashboards.
+                  </li>
+                  <li class="card-bullet-item">
+                    <strong>Data Lineage and ETL Analysis:</strong> Analyzed Python, PySpark, and Airflow DAGs across Git repositories to understand ETL pipelines, data transformations, and dependencies between source systems, the shared Cross-Border data mart, and Tableau reports.
+                  </li>
+                  <li class="card-bullet-item">
+                    <strong>Source-to-Target Mapping (STTM) Feasibility Assessment:</strong> Performed column-level feasibility checks by validating KPI source columns against existing STTM documentation and DDL definitions to determine data availability and mapping completeness.
+                  </li>
+                  <li class="card-bullet-item">
+                    <strong>CDE Validation and Gap Analysis:</strong> Evaluated unmapped columns against Visa's Critical Data Elements (CDEs), classified KPIs based on mapping feasibility, documented gaps and proposed transformations in internal STTM documentation, and collaborated with Visa's production team to resolve mapping discrepancies.
+                  </li>
+                  <li class="card-bullet-item">
+                    <strong>Power BI Migration and Semantic Layer Preparation:</strong> Supported the Tableau-to-Power BI modernization initiative by preparing validated KPI metadata, source-to-target mappings, and transformation requirements for subsequent OSI YAML configuration, semantic-layer development, and report migration.
+                  </li>
+                </ul>
+
+                <!-- Visa End-to-End Lineage & Architecture Flow -->
+                <div class="visa-pipeline-flow-wrap">
+                  <div class="visa-pipeline-header">
+                    <div class="visa-pipeline-title-group">
+                      <span class="visa-flow-icon">⚡</span>
+                      <div>
+                        <h5 class="visa-pipeline-heading">Cross-Border Data Lineage &amp; STTM Architecture</h5>
+                        <span class="visa-pipeline-sub">Source Systems → AI Parser → STTM / CDE Validation → OSI YAML → Power BI Semantic Layer</span>
+                      </div>
+                    </div>
+                    <span class="visa-pipeline-tag">Enterprise Telemetry</span>
+                  </div>
+
+                  <!-- 5 Visual Stage Gates -->
+                  <div class="visa-stages-grid">
+                    <div class="visa-stage-step">
+                      <span class="step-count">Stage 01</span>
+                      <strong class="step-label">Ingestion &amp; Mart</strong>
+                      <p class="step-desc">Visa Source Systems ➔ Spark ETL &amp; Airflow DAGs ➔ Cross-Border Data Mart</p>
+                    </div>
+                    <div class="visa-stage-step">
+                      <span class="step-count">Stage 02</span>
+                      <strong class="step-label">Tableau Reports</strong>
+                      <p class="step-desc">12 Tableau Dashboards ➔ KPIs, Measures &amp; Business Calculations</p>
+                    </div>
+                    <div class="visa-stage-step">
+                      <span class="step-count">Stage 03</span>
+                      <strong class="step-label">AI KPI Extraction</strong>
+                      <p class="step-desc">Python AI Parser ➔ Automated Extraction ➔ Source Column Lineage</p>
+                    </div>
+                    <div class="visa-stage-step">
+                      <span class="step-count">Stage 04</span>
+                      <strong class="step-label">STTM &amp; CDE Feasibility</strong>
+                      <p class="step-desc">Validation Check ➔ Fully Feasible vs CDE Gap Mapping ➔ Visa Prod Validation</p>
+                    </div>
+                    <div class="visa-stage-step">
+                      <span class="step-count">Stage 05</span>
+                      <strong class="step-label">Power BI Semantic</strong>
+                      <p class="step-desc">OSI YAML Definition ➔ Semantic Layer ➔ Production Modernized Reports</p>
+                    </div>
+                  </div>
+
+                  <!-- Architectural Flow Schematic Terminal -->
+                  <div class="visa-schematic-terminal">
+                    <div class="visa-terminal-top">
+                      <div class="screen-mac-dots">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                      </div>
+                      <span class="visa-terminal-file">visa-crossborder-lineage-flow.architecture</span>
+                      <span class="visa-terminal-badge">STTM Pipeline</span>
+                    </div>
+                    <pre class="visa-ascii-diagram"><code>          <span class="node-cyan">VISA SOURCE SYSTEMS</span>
+                         │
+                         ▼
+              <span class="node-purple">ETL / Spark Processing</span>
+                         │
+                    <span class="node-purple">Airflow DAGs</span>
+                         │
+                         ▼
+              <span class="node-gold">Generic Cross-Border</span>
+                   <span class="node-gold">Data Mart</span>
+                         │
+          ┌──────────────┼──────────────┐
+          ▼              ▼              ▼
+     <span class="node-cyan">Tableau WB 1</span>   <span class="node-cyan">Tableau WB 2</span>   ... <span class="node-cyan">Tableau WB 12</span>
+          │              │
+          ▼              ▼
+       <span class="node-dim">KPIs / Measures / Business Logic</span>
+                         │
+                         ▼
+                 <span class="node-gold">KPI Extraction</span>
+                  <span class="node-gold">(AI Parser)</span>
+                         │
+                         ▼
+              <span class="node-dim">Source Column Lineage</span>
+                         │
+                         ▼
+                 <span class="node-cyan">STTM Feasibility</span>
+                    <span class="node-cyan">Validation</span>
+                  /           \
+                 /             \
+        <span class="node-green">Fully Feasible</span>       <span class="node-coral">Gap</span>
+                              │
+                              ▼
+                         <span class="node-purple">CDE Mapping</span>
+                              │
+                    ┌─────────┴─────────┐
+                    ▼                   ▼
+              <span class="node-green">CDE Feasible</span>         <span class="node-coral">Not Feasible</span>
+                    │                   │
+                    └─────────┬─────────┘
+                              ▼
+                    <span class="node-dim">Internal STTM / Gap</span>
+                         <span class="node-dim">Documentation</span>
+                              │
+                              ▼
+                     <span class="node-cyan">Visa Production Team</span>
+                         <span class="node-cyan">Validation</span>
+                              │
+                              ▼
+                        <span class="node-gold">OSI YAML</span>
+                              │
+                              ▼
+                    <span class="node-gold">Power BI Semantic Layer</span>
+                              │
+                              ▼
+                       <span class="node-green">Power BI Report</span></code></pre>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Track 3: Novartis -->
+              <div class="exp-client-track exp-client-track-novartis">
+                <div class="exp-track-header">
+                  <span class="track-client-badge">Client 3</span>
+                  <h4 class="track-client-name">Novartis</h4>
+                  <span class="track-focus-tag">• Pharma Commercial Analytics – Power BI Reports &amp; Dashboards</span>
+                </div>
+                <ul class="card-bullet-points exp-bullets">
+                  <li class="card-bullet-item">
+                    <strong>Commercial Performance Dashboards:</strong> Developed Power BI reports and interactive dashboards to analyze pharmaceutical sales, brand positioning, market share, and product performance across markets.
+                  </li>
+                  <li class="card-bullet-item">
+                    <strong>Drug-Level Sales &amp; Growth Analysis:</strong> Used SQL, Excel, and Power BI to analyze drug-level sales trends, market growth, percentage changes, and competitive brand performance.
+                  </li>
+                  <li class="card-bullet-item">
+                    <strong>Patient Analytics &amp; Adoption Trends:</strong> Designed patient analytics dashboards to track estimated patient reach, drug consumption patterns, and treatment adoption trends.
+                  </li>
+                  <li class="card-bullet-item">
+                    <strong>Field Intelligence Integration:</strong> Integrated field reporting data into analytical reports, providing visibility into field activities, market insights, and sales performance for commercial teams.
+                  </li>
+                  <li class="card-bullet-item">
+                    <strong>Executive KPI Reporting:</strong> Created KPI-driven visualizations and executive-ready reports to identify growth opportunities, monitor brand performance, and support data-driven sales and marketing decisions.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card-chips-row exp-chips">
+                <span class="tech-chip">Power BI</span>
+                <span class="tech-chip">Microsoft Copilot Studio</span>
+                <span class="tech-chip">Power Apps</span>
+                <span class="tech-chip">SharePoint</span>
+                <span class="tech-chip">DAX &amp; Star Schema</span>
+                <span class="tech-chip">Role-Level Security (RLS)</span>
+                <span class="tech-chip">REST APIs</span>
+                <span class="tech-chip">SQL</span>
+                <span class="tech-chip">Python</span>
+                <span class="tech-chip">Power Query</span>
+                <span class="tech-chip">Tableau</span>
+                <span class="tech-chip">PySpark</span>
+                <span class="tech-chip">Apache Airflow</span>
+                <span class="tech-chip">STTM &amp; CDE</span>
+                <span class="tech-chip">OSI YAML</span>
+                <span class="tech-chip">Pharma Commercial Analytics</span>
+                <span class="tech-chip">Patient Analytics</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Horizontal Card 2: GlobalLogic -->
+          <article class="dashboard-card experience-card-horizontal" id="card-globallogic">
+            <!-- Left Brand Pillar: Logo + Company + Duration + 2 Client Badges + AI Product -->
+            <div class="exp-horizontal-left">
+              <div class="exp-logo-container">
+                <img src="assets/images/logo-globallogic.png" alt="GlobalLogic Logo" class="exp-company-logo">
+              </div>
+              
+              <div class="exp-company-meta">
+                <a href="https://www.globallogic.com/in/" target="_blank" rel="noopener noreferrer" class="exp-company-link" title="Visit GlobalLogic">
+                  <span>GlobalLogic (Hitachi)</span>
+                  <span class="exp-link-arrow">↗</span>
+                </a>
+                <span class="card-duration-badge exp-duration">July 2024 – Sept 2025</span>
+                
+                <div class="exp-clients-badge-wrap">
+                  <span class="exp-clients-label">2 Client Engagements</span>
+                  <div class="exp-clients-pills">
+                    <span class="exp-client-pill"><span class="client-dot client-dot-wm"></span>Wood Mackenzie</span>
+                    <span class="exp-client-pill"><span class="client-dot client-dot-cont"></span>Continuous</span>
+                  </div>
+                </div>
+
+                <div class="exp-clients-badge-wrap exp-product-badge-wrap">
+                  <span class="exp-clients-label">AI Product</span>
+                  <div class="exp-clients-pills">
+                    <a href="#card-shadowanalytics" class="exp-client-pill exp-product-pill" data-page="products" data-card="card-shadowanalytics" title="View Shadow Analytics in AI Product Builder">
+                      <span class="client-dot client-dot-ai"></span>
+                      <span>Shadow Analytics</span>
+                      <span class="exp-link-arrow">↗</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Detail Column: Role + 2 Dedicated Client Tracks + Tech Chips -->
+            <div class="exp-horizontal-right">
+              <div class="exp-role-header">
+                <div class="exp-role-title-row">
+                  <h3 class="card-role-title">Associate Analyst</h3>
+                  <span class="exp-domain-pill">Market Research • Financial Analytics • Document Intelligence</span>
+                </div>
+              </div>
+
+              <p class="card-body-desc exp-summary">
+                Delivered quantitative market research, financial analytics, and automated document extraction solutions across 2 international client engagements: <strong>Wood Mackenzie (UK-Timings)</strong> and <strong>Continuous (US-Timings)</strong>.
+              </p>
+
+              <!-- Track 1: Wood Mackenzie -->
+              <div class="exp-client-track">
+                <div class="exp-track-header">
+                  <span class="track-client-badge">Client 1</span>
+                  <h4 class="track-client-name">Wood Mackenzie</h4>
+                  <span class="track-focus-tag">• Market Research &amp; Financial Analytics (UK-Timings)</span>
+                </div>
+                <ul class="card-bullet-points exp-bullets">
+                  <li class="card-bullet-item">
+                    Conducted financial and market research using Bloomberg, SEC filings, 10-Ks, annual and sustainability reports to support market intelligence.
+                  </li>
+                  <li class="card-bullet-item">
+                    Extracted and validated financial parameters including revenue, OPEX, EBITDA, operating/net income, assets, liabilities, equity, and cash flows.
+                  </li>
+                  <li class="card-bullet-item">
+                    Analysed Risk Factors, MD&amp;A, segment performance, revenue drivers, YoY trends, and financial variances to identify business insights.
+                  </li>
+                  <li class="card-bullet-item">
+                    Used Excel, Pivot Tables, Power Query, VBA, and Macros to automate research workflows, structure datasets, perform variance analysis, and improve reporting efficiency.
+                  </li>
+                  <li class="card-bullet-item">
+                    Developed SQL queries to extract, transform, validate, and consolidate financial and market datasets, improving data reliability.
+                  </li>
+                  <li class="card-bullet-item">
+                    Supported automation, BI, and ML workflows for predictive analytics, anomaly detection, and pattern recognition.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Track 2: Continuous -->
+              <div class="exp-client-track">
+                <div class="exp-track-header">
+                  <span class="track-client-badge">Client 2</span>
+                  <h4 class="track-client-name">Continuous</h4>
+                  <span class="track-focus-tag">• Document Intelligence &amp; Data Analytics (US-Timings)</span>
+                </div>
+                <ul class="card-bullet-points exp-bullets">
+                  <li class="card-bullet-item">
+                    Delivered data extraction and analytics solutions across legal, BFSI, automobile, and other domains, identifying data gaps, operational challenges, and automation opportunities.
+                  </li>
+                  <li class="card-bullet-item">
+                    Translated analytical findings into actionable recommendations, business strategies, and executive-level PowerPoint presentations covering insights, risks, opportunities, and recommendations.
+                  </li>
+                  <li class="card-bullet-item">
+                    Developed Python workflows to extract, clean, structure, and validate data from scanned PDFs, legal documents, financial records, and unstructured sources using Selenium and BeautifulSoup.
+                  </li>
+                  <li class="card-bullet-item">
+                    Applied Python, SQL, EDA, statistical analysis, feature engineering, anomaly detection, and predictive analytics for data-driven problem solving.
+                  </li>
+                  <li class="card-bullet-item">
+                    Designed automated workflows integrating Python, SQL, Excel, APIs, web scraping, and BI platforms to improve data availability, reliability, and operational efficiency.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="card-chips-row exp-chips">
+                <span class="tech-chip">Python</span>
+                <span class="tech-chip">SQL</span>
+                <span class="tech-chip">Bloomberg</span>
+                <span class="tech-chip">SEC Filings / 10-Ks</span>
+                <span class="tech-chip">Excel &amp; VBA</span>
+                <span class="tech-chip">Power Query</span>
+                <span class="tech-chip">Selenium</span>
+                <span class="tech-chip">BeautifulSoup</span>
+                <span class="tech-chip">Power BI</span>
+                <span class="tech-chip">Predictive Analytics</span>
+                <span class="tech-chip">Anomaly Detection</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Horizontal Card 3: K&A Golf Private Limited -->
+          <article class="dashboard-card experience-card-horizontal" id="card-kagolf">
+            <!-- Left Brand Pillar: Logo + Company + Duration + Domain Badge + AI Product -->
+            <div class="exp-horizontal-left">
+              <div class="exp-logo-container">
+                <img src="assets/images/logo-kagolf.png" alt="K&A Golf Logo" class="exp-company-logo">
+              </div>
+              
+              <div class="exp-company-meta">
+                <a href="https://kagolf.co.in/" target="_blank" rel="noopener noreferrer" class="exp-company-link" title="Visit K&A Golf">
+                  <span>K&amp;A Golf Pvt. Ltd.</span>
+                  <span class="exp-link-arrow">↗</span>
+                </a>
+                <span class="card-duration-badge exp-duration">April 2021 – Sept 2021</span>
+                <span class="exp-engagement-badge">Data Analytics • Excel Automation • BI</span>
+
+                <div class="exp-clients-badge-wrap exp-product-badge-wrap">
+                  <span class="exp-clients-label">AI Product</span>
+                  <div class="exp-clients-pills">
+                    <a href="#card-swingstatspro" class="exp-client-pill exp-product-pill" data-page="products" data-card="card-swingstatspro" title="View SwingStatsPro in AI Product Builder">
+                      <span class="client-dot client-dot-ai"></span>
+                      <span>SwingStatsPro</span>
+                      <span class="exp-link-arrow">↗</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Detail Column: Role + Summary + Bullets + Tech Chips -->
+            <div class="exp-horizontal-right">
+              <div class="exp-role-header">
+                <div class="exp-role-title-row">
+                  <h3 class="card-role-title">Executive – Data Analytics &amp; Operations</h3>
+                  <span class="exp-domain-pill">Data Analytics • Excel Automation • Business Intelligence</span>
+                </div>
+              </div>
+
+              <p class="card-body-desc exp-summary">
+                Spearheaded data analytics, Excel-based reporting automation, and business intelligence for golf operations and sports technology products across 11 cities. Engineered custom scoring algorithms, interactive Looker Studio dashboards, and automated calculation models, while conceptualizing and piloting <strong>SwingStatsPro</strong>, an AI-powered sports telemetry platform.
+              </p>
+
+              <ul class="card-bullet-points exp-bullets">
+                <li class="card-bullet-item">
+                  <strong>Excel &amp; VBA Automation</strong>: Developed Excel-based automation solutions using VBA, Macros and advanced formulas (VLOOKUP, INDEX-MATCH, SUMIFS) to streamline golf scoring, automate calculations, and reduce repetitive manual data processing.
+                </li>
+                <li class="card-bullet-item">
+                  <strong>SwingStatsPro AI Telemetry</strong>: Conceptualized and developed <strong>SwingStatsPro</strong>, an AI sports telemetry platform combining simulator sensor feeds, launch angle calculations, and pose analysis to deliver automated swing kinematics diagnostics.
+                </li>
+                <li class="card-bullet-item">
+                  <strong>Scoring Algorithms &amp; Performance Tracking</strong>: Built custom scoring algorithms and Excel formulas to evaluate player performance, track handicap progression, analyse scoring trends, and monitor shot-level metrics.
+                </li>
+                <li class="card-bullet-item">
+                  <strong>Looker Studio BI Dashboards</strong>: Designed interactive Looker Studio dashboards and reports to visualise player performance, scoring patterns, event statistics, and business KPIs, enabling data-driven decision-making.
+                </li>
+                <li class="card-bullet-item">
+                  <strong>Analytical Reporting &amp; Presentations</strong>: Created 30+ PowerPoint presentations and analytical reports to communicate business models, research findings, performance insights, and client onboarding strategies to stakeholders.
+                </li>
+                <li class="card-bullet-item">
+                  <strong>Market Research &amp; Multi-City Analytics</strong>: Conducted market research and data analysis across 3+ in-house products and supported golf events across 11 cities nationwide, translating business and event data into actionable insights.
+                </li>
+              </ul>
+
+              <div class="card-chips-row exp-chips">
+                <span class="tech-chip">Excel &amp; VBA</span>
+                <span class="tech-chip">Macros &amp; Automation</span>
+                <span class="tech-chip">Advanced Formulas (INDEX-MATCH, SUMIFS)</span>
+                <span class="tech-chip">Looker Studio</span>
+                <span class="tech-chip">Business Intelligence (BI)</span>
+                <span class="tech-chip">Scoring Algorithms</span>
+                <span class="tech-chip">SwingStatsPro AI</span>
+                <span class="tech-chip">Sports Telemetry</span>
+                <span class="tech-chip">Market Research</span>
+                <span class="tech-chip">Stakeholder Presentations</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+            <!-- ======================================================================
+           PAGE 3: AI PRODUCT BUILDER (6 FOUNDED AI PRODUCTS & CASE STUDIES)
+           ====================================================================== -->
+      <section class="page-view dashboard-section" id="page-products">
+        
+        <!-- 1. Hero Section: Turning Real Problems into AI-Powered Products -->
+        <div class="products-hero-wrap">
+          <div class="products-hero-content">
+            <div class="section-tag-badge">AI PRODUCT BUILDER</div>
+            <h1 class="products-hero-headline">
+              Turning Real Problems into <span class="gradient-text-gold">AI-Powered Products</span>
+            </h1>
+            <p class="products-hero-subtitle">
+              I build practical, scalable AI products that solve real business problems. From <strong>idea → design → development → deployment</strong>, I've created products across finance, analytics, sports, logistics, and car care — using modern stacks and LLMs to deliver measurable impact.
+            </p>
+            <div class="products-hero-actions">
+              <button class="landing-action-btn primary btn-trigger-copilot" title="Book a Conversation with Pranav">
+                <span class="btn-icon">📅</span>
+                <span>Book a Conversation</span>
+              </button>
+              <a href="#section-case-studies" class="landing-action-btn" title="View Detailed Case Studies">
+                <span class="btn-icon">📁</span>
+                <span>View My Projects →</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="products-hero-visual">
+            <div class="developer-workspace-card">
+              <div class="hero-annotation">
+                <span>Rule No. 1 of Sales, Never Be Practical, Always Be Unrealistic</span>
+                <span class="annotation-arrow">⤵</span>
+              </div>
+
+              <div class="workspace-screen-frame">
+                <div class="screen-mac-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                  <span class="screen-title">pranav-ai-studio ~ main</span>
+                </div>
+                <div class="screen-ide-body">
+                  <div class="code-line"><span class="code-kw">const</span> <span class="code-var">aiProduct</span> = <span class="code-fn">buildProductionAI</span>({</div>
+                  <div class="code-line indent-1">problem: <span class="code-str">"Real Enterprise Friction"</span>,</div>
+                  <div class="code-line indent-1">architecture: [<span class="code-str">"LLMs"</span>, <span class="code-str">"Computer Vision"</span>, <span class="code-str">"RAG"</span>],</div>
+                  <div class="code-line indent-1">deploy: <span class="code-kw">true</span>, impact: <span class="code-str">"Measurable ROI"</span></div>
+                  <div class="code-line">});</div>
+                  <div class="code-status-pill">
+                    <span class="status-pulse-dot"></span>
+                    <span>6 AI Products Shipped &amp; Active</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4 Floating Process Steps -->
+              <div class="floating-steps-cluster">
+                <div class="floating-step-badge step-ideas" title="Step 1: Ideation">
+                  <span class="step-icon">💡</span>
+                  <span class="step-text">Ideas</span>
+                </div>
+                <div class="floating-step-badge step-build" title="Step 2: Engineering">
+                  <span class="step-icon">&lt;/&gt;</span>
+                  <span class="step-text">Build</span>
+                </div>
+                <div class="floating-step-badge step-ship" title="Step 3: Shipping">
+                  <span class="step-icon">🚀</span>
+                  <span class="step-text">Ship</span>
+                </div>
+                <div class="floating-step-badge step-impact" title="Step 4: Measurable Outcomes">
+                  <span class="step-icon">📈</span>
+                  <span class="step-text">Impact</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Core Pillars Strip: 5 Capability Cards -->
+        <div class="products-pillars-row">
+          <div class="pillar-card">
+            <div class="pillar-icon">🤖</div>
+            <div class="pillar-title">AI &amp; LLMs</div>
+            <div class="pillar-desc">OCR, RAG, Agents, GenAI and more.</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">💻</div>
+            <div class="pillar-title">Full-Stack Product Development</div>
+            <div class="pillar-desc">From MVP to scalable production systems.</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🎯</div>
+            <div class="pillar-title">Business &amp; User Focus</div>
+            <div class="pillar-desc">Solve real problems, not just build cool demos.</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🌐</div>
+            <div class="pillar-title">Cross-Domain Experience</div>
+            <div class="pillar-desc">Finance, Analytics, Sports, Logistics, Automotive, Health.</div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">⚡</div>
+            <div class="pillar-title">End-to-End Ownership</div>
+            <div class="pillar-desc">Strategy → Build → Deploy → Measure.</div>
+          </div>
+        </div>
+
+        <!-- 3. Selected Products Overview: 6 Products. 1 Vision. -->
+        <div class="products-section-header">
+          <div>
+            <div class="section-tag-badge">SELECTED PRODUCTS</div>
+            <h2 class="section-sub-title">6 Products. 1 Vision.</h2>
+            <p class="section-sub-desc">Each product solves a real problem, uses AI in meaningful ways, and delivers measurable value.</p>
+          </div>
+          <div class="section-header-annotation">
+            <span>Ideas into products that work.</span>
+            <span class="annotation-arrow">↗</span>
+          </div>
+        </div>
+
+        <!-- 6 Overview Cards Grid -->
+        <div class="products-overview-grid">
+          <!-- 1. Shadow Analytics -->
+          <a href="#card-shadowanalytics" class="product-overview-card" title="View Shadow Analytics Case Study">
+            <div class="overview-icon-badge badge-purple">📄</div>
+            <h3 class="overview-card-title">Shadow Analytics</h3>
+            <div class="overview-card-role">AI-Powered Document Intelligence Platform</div>
+            <p class="overview-card-desc">Extract, validate and structure information from unstructured documents.</p>
+            <div class="overview-card-btn">→</div>
+          </a>
+
+          <!-- 2. The Wisely App -->
+          <a href="#card-wisely" class="product-overview-card" title="View The Wisely App Case Study">
+            <div class="overview-icon-badge badge-teal">💳</div>
+            <h3 class="overview-card-title">The Wisely App <span class="overview-tag-better">(Better than Splitwise)</span></h3>
+            <div class="overview-card-role">AI-Powered Personal &amp; Group Finance Platform</div>
+            <p class="overview-card-desc">Track, analyse and grow your personal and shared finances with AI insights.</p>
+            <div class="overview-card-btn">→</div>
+          </a>
+
+          <!-- 3. SwingStatsPro -->
+          <a href="#card-swingstatspro" class="product-overview-card" title="View SwingStatsPro Case Study">
+            <div class="overview-icon-badge badge-blue">⛳</div>
+            <h3 class="overview-card-title">SwingStatsPro</h3>
+            <div class="overview-card-role">Golf Tournament Scoring &amp; Analytics Platform</div>
+            <p class="overview-card-desc">Real-time scoring, leaderboards and player performance insights.</p>
+            <div class="overview-card-btn">→</div>
+          </a>
+
+          <!-- 4. ShipCargo -->
+          <a href="#card-shipcargo" class="product-overview-card" title="View ShipCargo Case Study">
+            <div class="overview-icon-badge badge-orange">🚢</div>
+            <h3 class="overview-card-title">ShipCargo</h3>
+            <div class="overview-card-role">Freight &amp; Logistics Platform</div>
+            <p class="overview-card-desc">Simplifies cargo booking, tracking and logistics coordination.</p>
+            <div class="overview-card-btn">→</div>
+          </a>
+
+          <!-- 5. Torque Care -->
+          <a href="#card-torquecare" class="product-overview-card" title="View Torque Care Case Study">
+            <div class="overview-icon-badge badge-cyan">🚗</div>
+            <h3 class="overview-card-title">Torque Care</h3>
+            <div class="overview-card-role">Car Care &amp; Wash Tracking Platform</div>
+            <p class="overview-card-desc">Track missed washes, ensure fair payments, more transparency.</p>
+            <div class="overview-card-btn">→</div>
+          </a>
+
+          <!-- 6. Nirvana -->
+          <a href="#card-nirvana" class="product-overview-card" title="View Nirvana Case Study">
+            <div class="overview-icon-badge badge-violet">🧘</div>
+            <h3 class="overview-card-title">Nirvana</h3>
+            <div class="overview-card-role">Mental Wellness &amp; Wellbeing Platform</div>
+            <p class="overview-card-desc">Build healthier habits, reduce stress, live better.</p>
+            <div class="overview-card-btn">→</div>
+          </a>
+        </div>
+
+        <!-- 4. Detailed Case Studies: From Problem -> Product -> Impact -->
+        <div class="products-section-header" id="section-case-studies" style="margin-top: 3.5rem;">
+          <div>
+            <div class="section-tag-badge">DETAILED CASE STUDIES</div>
+            <h2 class="section-sub-title">From Problem → Product → Impact</h2>
+            <p class="section-sub-desc">Here's a closer look at a few of the products I've built, including the problem, my approach, what I built, the tech stack and the impact.</p>
+          </div>
+          <a href="#page-projects" class="landing-action-btn" data-page="projects" title="View All Data &amp; AI Projects">
+            <span>View All Projects →</span>
+          </a>
+        </div>
+
+        <!-- 6 Detailed Case Study Cards Grid -->
+        <div class="case-studies-grid">
+          
+          <!-- Card 1: Shadow Analytics -->
+          <article class="dashboard-card case-study-card" id="card-shadowanalytics" data-external-url="https://shadowanalytics19.vercel.app/" data-case-study-url="products/shadow-analytics.html" title="Click anywhere to open full Shadow Analytics Case Study">
+            <div class="case-study-header">
+              <div class="case-study-title-wrap">
+                <span class="case-study-icon icon-purple">📄</span>
+                <div>
+                  <h3 class="case-study-name">Shadow Analytics</h3>
+                  <a href="https://shadowanalytics19.vercel.app/" target="_blank" rel="noopener noreferrer" class="case-study-live-link" title="Visit Live External Platform">
+                    <span>shadowanalytics19.vercel.app</span>
+                    <span>↗</span>
+                  </a>
+                </div>
+              </div>
+              <div class="case-study-meta-cluster">
+                <span class="case-study-domain-tag">Document Intelligence</span>
+                <a href="products/shadow-analytics.html" class="case-study-arrow" title="Read Dedicated Case Study">→</a>
+              </div>
+            </div>
+
+            <div class="case-study-body">
+              <!-- Left: UI Preview Screen -->
+              <div class="case-study-preview preview-shadow">
+                <div class="preview-browser-dots">
+                  <span class="p-dot"></span><span class="p-dot"></span><span class="p-dot"></span>
+                  <span class="preview-domain">shadowanalytics19.vercel.app/extract</span>
+                </div>
+                <div class="preview-screen-content screen-ocr">
+                  <div class="ocr-document-mockup">
+                    <div class="ocr-scan-line"></div>
+                    <div class="ocr-text-skeleton line-lg"></div>
+                    <div class="ocr-text-skeleton line-md"></div>
+                    <div class="ocr-bbox-highlight">
+                      <span class="bbox-tag">Invoice #9021 • Confidence 98.4%</span>
+                    </div>
+                    <div class="ocr-table-grid">
+                      <div class="t-cell header">Total USD</div>
+                      <div class="t-cell val">$142,500.00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Problem, Approach, Tech, Impact -->
+              <div class="case-study-details">
+                <div class="study-block">
+                  <h4 class="study-block-label">The problem</h4>
+                  <p class="study-block-text">Manual document reading is slow, repetitive, and error-prone across enterprise contracts and financial filings.</p>
+                </div>
+
+                <div class="study-block">
+                  <h4 class="study-block-label">My approach</h4>
+                  <p class="study-block-text">Built an end-to-end AI pipeline to extract, validate, and structure key information, bounding boxes, and tables using OCR and Gemini LLM.</p>
+                </div>
+
+                <div class="study-chips-wrap">
+                  <span class="tech-chip">Python</span>
+                  <span class="tech-chip">OCR</span>
+                  <span class="tech-chip">Gemini</span>
+                  <span class="tech-chip">RAG</span>
+                  <span class="tech-chip">Next.js</span>
+                </div>
+
+                <div class="study-impact-row">
+                  <div class="impact-metric-box">
+                    <div class="impact-metric-val">90–98%</div>
+                    <div class="impact-metric-label">extraction accuracy</div>
+                  </div>
+                  <div class="impact-metric-box">
+                    <div class="impact-metric-val">~85%</div>
+                    <div class="impact-metric-label">reduction in manual effort</div>
+                  </div>
+                </div>
+
+                <div class="case-study-cta-row">
+                  <a href="products/shadow-analytics.html" class="case-study-read-btn">
+                    <span>Read Full 6-Part Case Study</span>
+                    <span class="arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: The Wisely App -->
+          <article class="dashboard-card case-study-card" id="card-wisely" data-external-url="https://www.thewiselyapp.com" data-case-study-url="products/the-wisely-app.html" title="Click anywhere to open full The Wisely App Case Study">
+            <div class="case-study-header">
+              <div class="case-study-title-wrap">
+                <span class="case-study-icon icon-teal">💳</span>
+                <div>
+                  <h3 class="case-study-name">
+                    The Wisely App
+                    <span class="case-study-sub-badge">(Better than Splitwise)</span>
+                  </h3>
+                  <a href="https://www.thewiselyapp.com" target="_blank" rel="noopener noreferrer" class="case-study-live-link" title="Visit Live External Platform">
+                    <span>thewiselyapp.com</span>
+                    <span>↗</span>
+                  </a>
+                </div>
+              </div>
+              <div class="case-study-meta-cluster">
+                <span class="case-study-domain-tag">Finance</span>
+                <a href="products/the-wisely-app.html" class="case-study-arrow" title="Read Dedicated Case Study">→</a>
+              </div>
+            </div>
+
+            <div class="case-study-body">
+              <!-- Left: UI Preview Screen -->
+              <div class="case-study-preview preview-wisely">
+                <div class="preview-browser-dots">
+                  <span class="p-dot"></span><span class="p-dot"></span><span class="p-dot"></span>
+                  <span class="preview-domain">thewiselyapp.com/dashboard</span>
+                </div>
+                <div class="preview-screen-content screen-finance">
+                  <div class="finance-bars-wrap">
+                    <div class="f-bar" style="height: 65%;"></div>
+                    <div class="f-bar" style="height: 85%;"></div>
+                    <div class="f-bar" style="height: 45%;"></div>
+                    <div class="f-bar highlight" style="height: 95%;"></div>
+                    <div class="f-bar" style="height: 70%;"></div>
+                  </div>
+                  <div class="finance-card-pill">
+                    <span>Net Balance: +$3,420</span>
+                    <span class="trend-badge">▲ 14%</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Problem, Approach, Tech, Impact -->
+              <div class="case-study-details">
+                <div class="study-block">
+                  <h4 class="study-block-label">The problem</h4>
+                  <p class="study-block-text">Managing personal and group finances separately is complex, causing untracked debts and budget leakage.</p>
+                </div>
+
+                <div class="study-block">
+                  <h4 class="study-block-label">My approach</h4>
+                  <p class="study-block-text">Combined personal finance, group expenses, automated debt settlement algorithms, and AI spending insights into a unified application.</p>
+                </div>
+
+                <div class="study-chips-wrap">
+                  <span class="tech-chip">Next.js</span>
+                  <span class="tech-chip">Firebase</span>
+                  <span class="tech-chip">Tailwind</span>
+                  <span class="tech-chip">GenAI</span>
+                </div>
+
+                <div class="study-impact-row">
+                  <div class="impact-metric-box">
+                    <div class="impact-metric-val">Complete</div>
+                    <div class="impact-metric-label">financial picture</div>
+                  </div>
+                  <div class="impact-metric-box">
+                    <div class="impact-metric-val">Smarter</div>
+                    <div class="impact-metric-label">spending decisions</div>
+                  </div>
+                </div>
+
+                <div class="case-study-cta-row">
+                  <a href="products/the-wisely-app.html" class="case-study-read-btn">
+                    <span>Read Full 6-Part Case Study</span>
+                    <span class="arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: SwingStatsPro -->
+          <article class="dashboard-card case-study-card" id="card-swingstatspro" data-external-url="https://swing-pro-rose.vercel.app/" data-case-study-url="products/swingstatspro.html" title="Click anywhere to open full SwingStatsPro Case Study">
+            <div class="case-study-header">
+              <div class="case-study-title-wrap">
+                <span class="case-study-icon icon-blue">⛳</span>
+                <div>
+                  <h3 class="case-study-name">SwingStatsPro</h3>
+                  <a href="https://swing-pro-rose.vercel.app/" target="_blank" rel="noopener noreferrer" class="case-study-live-link" title="Visit Live External Platform">
+                    <span>swing-pro-rose.vercel.app</span>
+                    <span>↗</span>
+                  </a>
+                </div>
+              </div>
+              <div class="case-study-meta-cluster">
+                <span class="case-study-domain-tag">Sports Analytics</span>
+                <a href="products/swingstatspro.html" class="case-study-arrow" title="Read Dedicated Case Study">→</a>
+              </div>
+            </div>
+
+            <div class="case-study-body">
+              <!-- Left: UI Preview Screen -->
+              <div class="case-study-preview preview-golf">
+                <div class="preview-browser-dots">
+                  <span class="p-dot"></span><span class="p-dot"></span><span class="p-dot"></span>
+                  <span class="preview-domain">swing-pro-rose.vercel.app</span>
+                </div>
+                <div class="preview-screen-content screen-golf">
+                  <div class="golf-simulator-viz">
+                    <div class="fairway-arc"></div>
+                    <div class="trajectory-ball"></div>
+                    <div class="golf-telemetry-badge">
+                      <span>Ball Speed: 168 mph • Carry: 284 yds</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Problem, Approach, Tech, Impact -->
+              <div class="case-study-details">
+                <div class="study-block">
+                  <h4 class="study-block-label">The problem</h4>
+                  <p class="study-block-text">Manual scoring, delayed tournament results, and lack of live telemetry for indoor simulator golf competitions.</p>
+                </div>
+
+                <div class="study-block">
+                  <h4 class="study-block-label">My approach</h4>
+                  <p class="study-block-text">Built a real-time tournament scoring, live leaderboard, and computer vision swing telemetry platform for golfers and organizers.</p>
+                </div>
+
+                <div class="study-chips-wrap">
+                  <span class="tech-chip">React</span>
+                  <span class="tech-chip">Node.js</span>
+                  <span class="tech-chip">PostgreSQL</span>
+                  <span class="tech-chip">Tailwind</span>
+                </div>
+
+                <div class="study-impact-row">
+                  <div class="impact-metric-box">
+                    <div class="impact-metric-val">Real-time</div>
+                    <div class="impact-metric-label">leaderboards</div>
+                  </div>
+                  <div class="impact-metric-box">
+                    <div class="impact-metric-val">Actionable</div>
+                    <div class="impact-metric-label">player insights</div>
+                  </div>
+                </div>
+
+                <div class="case-study-cta-row">
+                  <a href="products/swingstatspro.html" class="case-study-read-btn">
+                    <span>Read Full 6-Part Case Study</span>
+                    <span class="arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: ShipCargo -->
+          <article class="dashboard-card case-study-card" id="card-shipcargo" data-external-url="https://shipcargo.io" data-case-study-url="products/shipcargo.html" title="Click anywhere to open full ShipCargo Case Study">
+            <div class="case-study-header">
+              <div class="case-study-title-wrap">
+                <span class="case-study-icon icon-orange">🚢</span>
+                <div>
+                  <h3 class="case-study-name">ShipCargo</h3>
+                  <a href="https://shipcargo.io" target="_blank" rel="noopener noreferrer" class="case-study-live-link" title="Visit Live External Platform">
+                    <span>shipcargo.io</span>
+                    <span>↗</span>
+                  </a>
+                </div>
+              </div>
+              <div class="case-study-meta-cluster">
+                <span class="case-study-domain-tag">Logistics</span>
+                <a href="products/shipcargo.html" class="case-study-arrow" title="Read Dedicated Case Study">→</a>
+              </div>
+            </div>
+
+            <div class="case-study-body">
+              <!-- Left: UI Preview Screen -->
+              <div class="case-study-preview preview-cargo">
+                <div class="preview-browser-dots">
+                  <span class="p-dot"></span><span class="p-dot"></span><span class="p-dot"></span>
+                  <span class="preview-domain">shipcargo.io/tracking</span>
+                </div>
+                <div class="preview-screen-content screen-cargo">
+                  <div class="cargo-route-viz">
+                    <div class="vessel-marker">🚢 Singapore → Rotterdam</div>
+                    <div class="route-progress-bar"><div class="progress-fill" style="width: 78%;"></div></div>
+                    <div class="cargo-status-tag">On Schedule • 24 TEU Containers</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Problem, Approach, Tech, Impact -->
+              <div class="case-study-details">
+                <div class="study-block">
+                  <h4 class="study-block-label">The problem</h4>
+                  <p class="study-block-text">Freight booking and cross-border container tracking is fragmented, opaque, and prone to costly transit delays.</p>
+                </div>
+
+                <div class="study-block">
+                  <h4 class="study-block-label">My approach</h4>
+                  <p class="study-block-text">Built an intelligent logistics platform to simplify cargo booking, dynamic pricing, live vessel telemetry, and customs coordination.</p>
+                </div>
+
+                <div class="study-chips-wrap">
+                  <span class="tech-chip">Next.js</span>
+                  <span class="tech-chip">Node.js</span>
+                  <span class="tech-chip">PostgreSQL</span>
+                  <span class="tech-chip">Tailwind</span>
+                </div>
+
+                <div class="study-impact-row">
+                  <div class="impact-metric-box">
+                    <div class="impact-metric-val">Faster</div>
+                    <div class="impact-metric-label">bookings</div>
+                  </div>
+                  <div class="impact-metric-box">
+                    <div class="impact-metric-val">Better</div>
+                    <div class="impact-metric-label">visibility &amp; control</div>
+                  </div>
+                </div>
+
+                <div class="case-study-cta-row">
+                  <a href="products/shipcargo.html" class="case-study-read-btn">
+                    <span>Read Full 6-Part Case Study</span>
+                    <span class="arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Torque Care -->
+          <article class="dashboard-card case-study-card" id="card-torquecare" data-external-url="https://torquecare.app" data-case-study-url="products/torque-care.html" title="Click anywhere to open full Torque Care Case Study">
+            <div class="case-study-header">
+              <div class="case-study-title-wrap">
+                <span class="case-study-icon icon-cyan">🚗</span>
+                <div>
+                  <h3 class="case-study-name">Torque Care</h3>
+                  <a href="https://torquecare.app" target="_blank" rel="noopener noreferrer" class="case-study-live-link" title="Visit Live External Platform">
+                    <span>torquecare.app</span>
+                    <span>↗</span>
+                  </a>
+                </div>
+              </div>
+              <div class="case-study-meta-cluster">
+                <span class="case-study-domain-tag">Automotive</span>
+                <a href="products/torque-care.html" class="case-study-arrow" title="Read Dedicated Case Study">→</a>
+              </div>
+            </div>
+
+            <div class="case-study-body">
+              <!-- Left: UI Preview Screen -->
+              <div class="case-study-preview preview-torque">
+                <div class="preview-browser-dots">
+                  <span class="p-dot"></span><span class="p-dot"></span><span class="p-dot"></span>
+                  <span class="preview-domain">torquecare.app/diagnostics</span>
+                </div>
+                <div class="preview-screen-content screen-torque">
+                  <div class="car-diagnostics-viz">
+                    <div class="vehicle-wireframe">🏎️ Fleet Diagnostic: Healthy</div>
+                    <div class="telemetry-gauge-cluster">
+                      <div class="t-pill">Attendance: Active</div>
+                      <div class="t-pill">Adjustment: -$12.00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Problem, Approach, Tech, Impact -->
+              <div class="case-study-details">
+                <div class="study-block">
+                  <h4 class="study-block-label">The problem</h4>
+                  <p class="study-block-text">Missed washes, untracked monthly service days, and lack of transparency between vehicle owners and neighborhood cleaners.</p>
+                </div>
+
+                <div class="study-block">
+                  <h4 class="study-block-label">My approach</h4>
+                  <p class="study-block-text">Built an objective tracking and verification platform with automated holiday rules and pro-rata monthly billing adjustment calculations.</p>
+                </div>
+
+                <div class="study-chips-wrap">
+                  <span class="tech-chip">Next.js</span>
+                  <span class="tech-chip">Firebase</span>
+                  <span class="tech-chip">Tailwind</span>
+                  <span class="tech-chip">PWA</span>
+                </div>
+
+                <div class="study-impact-row">
+                  <div class="impact-metric-box">
+                    <div class="impact-metric-val">100%</div>
+                    <div class="impact-metric-label">dispute-free billing</div>
+                  </div>
+                  <div class="impact-metric-box">
+                    <div class="impact-metric-val">15–20%</div>
+                    <div class="impact-metric-label">unearned fee recovery</div>
+                  </div>
+                </div>
+
+                <div class="case-study-cta-row">
+                  <a href="products/torque-care.html" class="case-study-read-btn">
+                    <span>Read Full 6-Part Case Study</span>
+                    <span class="arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Nirvana -->
+          <article class="dashboard-card case-study-card" id="card-nirvana" data-external-url="https://nirvana.ai" data-case-study-url="products/nirvana.html" title="Click anywhere to open full Nirvana Case Study">
+            <div class="case-study-header">
+              <div class="case-study-title-wrap">
+                <span class="case-study-icon icon-violet">🧘</span>
+                <div>
+                  <h3 class="case-study-name">Nirvana</h3>
+                  <a href="https://nirvana.ai" target="_blank" rel="noopener noreferrer" class="case-study-live-link" title="Visit Live External Platform">
+                    <span>nirvana.ai</span>
+                    <span>↗</span>
+                  </a>
+                </div>
+              </div>
+              <div class="case-study-meta-cluster">
+                <span class="case-study-domain-tag">Wellbeing</span>
+                <a href="products/nirvana.html" class="case-study-arrow" title="Read Dedicated Case Study">→</a>
+              </div>
+            </div>
+
+            <div class="case-study-body">
+              <!-- Left: UI Preview Screen -->
+              <div class="case-study-preview preview-nirvana">
+                <div class="preview-browser-dots">
+                  <span class="p-dot"></span><span class="p-dot"></span><span class="p-dot"></span>
+                  <span class="preview-domain">nirvana.ai/session</span>
+                </div>
+                <div class="preview-screen-content screen-nirvana">
+                  <div class="zen-waves-wrap">
+                    <div class="zen-wave wave-1"></div>
+                    <div class="zen-wave wave-2"></div>
+                    <div class="zen-status-badge">
+                      <span>Guided Session: Alpha Flow (12m)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Problem, Approach, Tech, Impact -->
+              <div class="case-study-details">
+                <div class="study-block">
+                  <h4 class="study-block-label">The problem</h4>
+                  <p class="study-block-text">High patient drop-off in post-consultation care routines and lack of continuous recovery telemetry for clinicians.</p>
+                </div>
+
+                <div class="study-block">
+                  <h4 class="study-block-label">My approach</h4>
+                  <p class="study-block-text">Built an empathetic conversational health companion and dynamic ambient audio regulation platform that reports adherence telemetry to clinicians.</p>
+                </div>
+
+                <div class="study-chips-wrap">
+                  <span class="tech-chip">Next.js</span>
+                  <span class="tech-chip">Firebase</span>
+                  <span class="tech-chip">Tailwind</span>
+                  <span class="tech-chip">GenAI</span>
+                </div>
+
+                <div class="study-impact-row">
+                  <div class="impact-metric-box">
+                    <div class="impact-metric-val">+42%</div>
+                    <div class="impact-metric-label">protocol adherence</div>
+                  </div>
+                  <div class="impact-metric-box">
+                    <div class="impact-metric-val">~50%</div>
+                    <div class="impact-metric-label">review prep savings</div>
+                  </div>
+                </div>
+
+                <div class="case-study-cta-row">
+                  <a href="products/nirvana.html" class="case-study-read-btn">
+                    <span>Read Full 6-Part Case Study</span>
+                    <span class="arrow">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- 5. Technology Stack & Impact Banner -->
+        <div class="products-tech-impact-bar">
+          <div class="tech-stack-col">
+            <div class="bar-eyebrow">TECHNOLOGY STACK</div>
+            <h3 class="bar-headline">Tools I Work With</h3>
+            <div class="tools-chips-grid">
+              <span class="tool-badge"><span class="tool-dot dot-py"></span>Python</span>
+              <span class="tool-badge"><span class="tool-dot dot-sql"></span>SQL</span>
+              <span class="tool-badge"><span class="tool-dot dot-next"></span>Next.js</span>
+              <span class="tool-badge"><span class="tool-dot dot-react"></span>React</span>
+              <span class="tool-badge"><span class="tool-dot dot-node"></span>Node.js</span>
+              <span class="tool-badge"><span class="tool-dot dot-fire"></span>Firebase</span>
+              <span class="tool-badge"><span class="tool-dot dot-tw"></span>Tailwind</span>
+              <span class="tool-badge"><span class="tool-dot dot-pg"></span>PostgreSQL</span>
+              <span class="tool-badge"><span class="tool-dot dot-dock"></span>Docker</span>
+              <span class="tool-badge"><span class="tool-dot dot-git"></span>Git</span>
+              <span class="tool-badge"><span class="tool-dot dot-aws"></span>AWS</span>
+              <span class="tool-badge"><span class="tool-dot dot-ai"></span>GenAI / LLMs</span>
+            </div>
+          </div>
+
+          <div class="impact-stats-col">
+            <div class="bar-eyebrow">THE IMPACT</div>
+            <div class="impact-kpis-cluster">
+              <div class="impact-kpi-item">
+                <div class="kpi-num">6</div>
+                <div class="kpi-lbl">Products Built</div>
+              </div>
+              <div class="impact-kpi-item">
+                <div class="kpi-num">90%+</div>
+                <div class="kpi-lbl">Avg. Accuracy / Uptime</div>
+              </div>
+              <div class="impact-kpi-item">
+                <div class="kpi-num">85%</div>
+                <div class="kpi-lbl">Avg. Manual Effort Reduction</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Call to Action Banner: Let's Build Something Great -->
+        <div class="products-cta-banner">
+          <div class="cta-banner-content">
+            <div class="cta-icon-badge">💡</div>
+            <div>
+              <h3 class="cta-banner-title">Let's Build Something Great</h3>
+              <p class="cta-banner-text">
+                I'm always open to discussing new opportunities, interesting projects, or ways to solve real problems with AI. If you're looking for someone who can think, build and deliver — let's talk.
+              </p>
+            </div>
+          </div>
+          <div class="cta-banner-actions">
+            <button class="landing-action-btn primary btn-trigger-copilot" title="Connect with Pranav">
+              <span class="btn-icon">📅</span>
+              <span>Book a Conversation</span>
+            </button>
+            <span class="cta-availability-meta">Open to: Full-time | Contract | Consulting | Freelance</span>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ======================================================================
+           PAGE 4: PROJECTS & CASE STUDIES (STANDALONE VIEW)
+           ====================================================================== -->
+      <section class="page-view dashboard-section" id="page-projects">
+        <div class="section-title-bar">
+          <div class="section-heading-cluster">
+            <div class="section-heading-icon">📊</div>
+            <h2 class="section-main-heading">Projects &amp; Case Studies</h2>
+            <span class="section-badge-count">Data Science &amp; ML</span>
+          </div>
+        </div>
+
+        <div class="dashboard-cards-grid">
+          
+          <!-- URL Guard -->
+          <article class="dashboard-card" id="card-urlguard">
+            <div>
+              <div class="card-top-header">
+                <div>
+                  <h3 class="card-role-title">URL Guard</h3>
+                  <span class="card-company-sub">Malware Detection &amp; Classification</span>
+                </div>
+                <span class="card-duration-badge">Machine Learning</span>
+              </div>
+              <p class="card-body-desc">
+                Machine learning models (Gradient Descent, Decision Trees, XGBoost) trained to classify and detect malicious URLs and phishing threats from lexical and network features.
+              </p>
+            </div>
+            <div class="card-chips-row">
+              <span class="tech-chip">XGBoost</span>
+              <span class="tech-chip">Decision Trees</span>
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">Scikit-learn</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://pranavghosh19.github.io/URL-Guard-Malware-Detection-and-Classification/" target="_blank" rel="noopener noreferrer" class="card-action-btn">Live Demo ↗</a>
+              <a href="https://github.com/PranavGhosh19/URL-Guard-Malware-Detection-and-Classification" target="_blank" rel="noopener noreferrer" class="card-action-btn">GitHub ↗</a>
+            </div>
+          </article>
+
+          <!-- Power BI Delivery Analysis -->
+          <article class="dashboard-card" id="card-delivery">
+            <div>
+              <div class="card-top-header">
+                <div>
+                  <h3 class="card-role-title">Power BI Delivery Analytics</h3>
+                  <span class="card-company-sub">Production BI &amp; DAX</span>
+                </div>
+                <span class="card-duration-badge">Business Intelligence</span>
+              </div>
+              <p class="card-body-desc">
+                Executive delivery performance dashboard tracking fulfillment cycle times, cost per shipment, and regional SLAs using Power Query ETL and custom DAX calculations.
+              </p>
+            </div>
+            <div class="card-chips-row">
+              <span class="tech-chip">Power BI</span>
+              <span class="tech-chip">DAX Functions</span>
+              <span class="tech-chip">Power Query</span>
+              <span class="tech-chip">Star Schema</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://www.novypro.com/project/delivery-analysis" target="_blank" rel="noopener noreferrer" class="card-action-btn">NovyPro Report ↗</a>
+            </div>
+          </article>
+
+          <!-- Movie Recommendation System -->
+          <article class="dashboard-card" id="card-movie">
+            <div>
+              <div class="card-top-header">
+                <div>
+                  <h3 class="card-role-title">Movie Recommendation</h3>
+                  <span class="card-company-sub">Deep Learning &amp; CNNs</span>
+                </div>
+                <span class="card-duration-badge">Neural Algorithms</span>
+              </div>
+              <p class="card-body-desc">
+                Neural recommendation algorithm utilizing Convolutional Neural Networks (CNNs) and collaborative filtering to predict user movie ratings and personalized recommendations.
+              </p>
+            </div>
+            <div class="card-chips-row">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">CNNs</span>
+              <span class="tech-chip">Deep Learning</span>
+              <span class="tech-chip">Filtering</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://github.com/PranavGhosh19/Movie-Recommendation-System" target="_blank" rel="noopener noreferrer" class="card-action-btn">GitHub Repo ↗</a>
+              <a href="https://1drv.ms/p/s!ApIEyo-IW1RslDs9nlfIljm_v_zl" target="_blank" rel="noopener noreferrer" class="card-action-btn">Deck ↗</a>
+            </div>
+          </article>
+
+          <!-- Banking Case Study -->
+          <article class="dashboard-card" id="card-banking">
+            <div>
+              <div class="card-top-header">
+                <div>
+                  <h3 class="card-role-title">Banking &amp; Credit Risk</h3>
+                  <span class="card-company-sub">Financial ML Algorithms</span>
+                </div>
+                <span class="card-duration-badge">Risk Analytics</span>
+              </div>
+              <p class="card-body-desc">
+                Predictive risk assessment and customer churn analysis on retail banking data utilizing classification models, feature selection, and statistical evaluations.
+              </p>
+            </div>
+            <div class="card-chips-row">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">Scikit-learn</span>
+              <span class="tech-chip">Statistical Analysis</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://github.com/PranavGhosh19/Banking_Case_Study" target="_blank" rel="noopener noreferrer" class="card-action-btn">GitHub Repo ↗</a>
+            </div>
+          </article>
+
+          <!-- The Eye Attendance -->
+          <article class="dashboard-card" id="card-theeye">
+            <div>
+              <div class="card-top-header">
+                <div>
+                  <h3 class="card-role-title">The Eye Attendance</h3>
+                  <span class="card-company-sub">IoT &amp; Computer Vision</span>
+                </div>
+                <span class="card-duration-badge">Smart Attendance</span>
+              </div>
+              <p class="card-body-desc">
+                Facial recognition attendance automation system built with computer vision models and IoT sensors to streamline employee check-ins and eliminate proxy logging.
+              </p>
+            </div>
+            <div class="card-chips-row">
+              <span class="tech-chip">Computer Vision</span>
+              <span class="tech-chip">IoT</span>
+              <span class="tech-chip">Python</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://onedrive.live.com/view.aspx?resid=6C545B888FCA0492%212435&authkey=!AATFElcpYPgXK20" target="_blank" rel="noopener noreferrer" class="card-action-btn">Presentation Deck ↗</a>
+            </div>
+          </article>
+
+          <!-- Advanced Excel Modeling -->
+          <article class="dashboard-card" id="card-excel">
+            <div>
+              <div class="card-top-header">
+                <div>
+                  <h3 class="card-role-title">Advanced Excel Modeling</h3>
+                  <span class="card-company-sub">Financial Analytics</span>
+                </div>
+                <span class="card-duration-badge">Spreadsheet Modeling</span>
+              </div>
+              <p class="card-body-desc">
+                Advanced financial modeling, nested conditional logic, automated Pivot Tables, and business intelligence models built with Microsoft Excel and Google Spreadsheets.
+              </p>
+            </div>
+            <div class="card-chips-row">
+              <span class="tech-chip">Advanced Excel</span>
+              <span class="tech-chip">Google Spreadsheets</span>
+              <span class="tech-chip">Macros &amp; VBA</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vS9JwsOxAt2AQG749-vOUiWsrZwLicig8v7KWA2mDioB7KSejAJ2NDGGAzpq6rQPyR9LFmm99X7aUP1/pubhtml?gid=1995887939&single=true" target="_blank" rel="noopener noreferrer" class="card-action-btn">Live Spreadsheet ↗</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           PAGE 5: SKILLS & CAPABILITIES (STANDALONE VIEW)
+           ====================================================================== -->
+      <section class="page-view dashboard-section" id="page-skills">
+        <div class="section-title-bar">
+          <div class="section-heading-cluster">
+            <div class="section-heading-icon">⚡</div>
+            <h2 class="section-main-heading">Skills &amp; Capabilities</h2>
+            <span class="section-badge-count">Taxonomy</span>
+          </div>
+        </div>
+
+        <div class="dashboard-cards-grid">
+          
+          <article class="dashboard-card" id="card-skill-tech">
+            <div class="card-top-header">
+              <h3 class="card-role-title">Technical &amp; Programming</h3>
+              <span class="card-duration-badge">Core</span>
+            </div>
+            <p class="card-body-desc">Languages and engineering tools used for data manipulation, script automation, and full-stack integration.</p>
+            <div class="card-chips-row">
+              <span class="tech-chip">SQL</span>
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">Pandas &amp; NumPy</span>
+              <span class="tech-chip">R Programming</span>
+              <span class="tech-chip">HTML5 &amp; CSS3</span>
+              <span class="tech-chip">JavaScript</span>
+              <span class="tech-chip">Git</span>
+            </div>
+          </article>
+
+          <article class="dashboard-card" id="card-skill-bi">
+            <div class="card-top-header">
+              <h3 class="card-role-title">Data Visualizations &amp; BI</h3>
+              <span class="card-duration-badge">Analytics</span>
+            </div>
+            <p class="card-body-desc">Production business intelligence dashboards, star schema modeling, and reporting suites.</p>
+            <div class="card-chips-row">
+              <span class="tech-chip">Power BI</span>
+              <span class="tech-chip">DAX Functions</span>
+              <span class="tech-chip">Star Schema</span>
+              <span class="tech-chip">Row-Level Security</span>
+              <span class="tech-chip">Tableau</span>
+              <span class="tech-chip">Advanced Excel</span>
+              <span class="tech-chip">Google Spreadsheets</span>
+              <span class="tech-chip">Google Analytics</span>
+            </div>
+          </article>
+
+          <article class="dashboard-card" id="card-skill-genai">
+            <div class="card-top-header">
+              <h3 class="card-role-title">GenAI &amp; AI Products</h3>
+              <span class="card-duration-badge">Artificial Intelligence</span>
+            </div>
+            <p class="card-body-desc">LLM orchestration, document extraction, intelligent agents, and conversational interfaces.</p>
+            <div class="card-chips-row">
+              <span class="tech-chip">LLMs</span>
+              <span class="tech-chip">Google Gemini API</span>
+              <span class="tech-chip">Tesseract OCR</span>
+              <span class="tech-chip">RAG Systems</span>
+              <span class="tech-chip">Prompt Engineering</span>
+              <span class="tech-chip">Microsoft Copilot Studio</span>
+              <span class="tech-chip">AI Agents</span>
+            </div>
+          </article>
+
+          <article class="dashboard-card" id="card-skill-ml">
+            <div class="card-top-header">
+              <h3 class="card-role-title">Machine Learning &amp; DL</h3>
+              <span class="card-duration-badge">Algorithms</span>
+            </div>
+            <p class="card-body-desc">Supervised and unsupervised learning, classification, time-series forecasting, and neural architectures.</p>
+            <div class="card-chips-row">
+              <span class="tech-chip">Regression &amp; Classification</span>
+              <span class="tech-chip">XGBoost &amp; Decision Trees</span>
+              <span class="tech-chip">Clustering</span>
+              <span class="tech-chip">Convolutional Neural Networks (CNN)</span>
+              <span class="tech-chip">Feature Engineering</span>
+              <span class="tech-chip">Scikit-learn</span>
+            </div>
+          </article>
+
+          <article class="dashboard-card" id="card-skill-de">
+            <div class="card-top-header">
+              <h3 class="card-role-title">Data Engineering &amp; ETL</h3>
+              <span class="card-duration-badge">Pipelines</span>
+            </div>
+            <p class="card-body-desc">Source-to-target data mappings, critical data element validation, and automated ETL pipelines.</p>
+            <div class="card-chips-row">
+              <span class="tech-chip">Source-to-Target Mapping (STDM)</span>
+              <span class="tech-chip">Critical Data Elements (CDE)</span>
+              <span class="tech-chip">Power Query</span>
+              <span class="tech-chip">Power Automate</span>
+              <span class="tech-chip">VBA Automation</span>
+              <span class="tech-chip">REST APIs</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           PAGE 6: EDUCATION & CERTIFICATIONS (STANDALONE VIEW)
+           ====================================================================== -->
+      <section class="page-view dashboard-section" id="page-education">
+        <div class="section-title-bar">
+          <div class="section-heading-cluster">
+            <div class="section-heading-icon">🎓</div>
+            <h2 class="section-main-heading">Education &amp; Certifications</h2>
+            <span class="section-badge-count">Credentials</span>
+          </div>
+        </div>
+
+        <div class="dashboard-cards-grid">
+          
+          <article class="dashboard-card" id="card-edu-christ">
+            <div class="card-top-header">
+              <div>
+                <h3 class="card-role-title">M.Sc. Data Science</h3>
+                <span class="card-company-sub">Christ University</span>
+              </div>
+              <span class="card-duration-badge">Master's Degree</span>
+            </div>
+            <p class="card-body-desc">
+              Comprehensive postgraduate curriculum covering Advanced Statistical Modeling, Machine Learning, Deep Neural Networks, Big Data Architectures, and Applied Predictive Analytics.
+            </p>
+          </article>
+
+          <article class="dashboard-card" id="card-cert-powerbi">
+            <div class="card-top-header">
+              <div>
+                <h3 class="card-role-title">Microsoft Certified</h3>
+                <span class="card-company-sub">Power BI Data Analyst Associate</span>
+              </div>
+              <span class="card-duration-badge">Verified Credential</span>
+            </div>
+            <p class="card-body-desc">
+              Official industry certification validating expertise in enterprise data preparation, complex DAX expressions, star schema modeling, and executive report design.
+            </p>
+          </article>
+
+          <article class="dashboard-card" id="card-languages">
+            <div class="card-top-header">
+              <div>
+                <h3 class="card-role-title">Languages Spoken</h3>
+                <span class="card-company-sub">Global Communication</span>
+              </div>
+              <span class="card-duration-badge">Multilingual</span>
+            </div>
+            <p class="card-body-desc">
+              Fluent communication across diverse cross-functional leadership and global stakeholder teams.
+            </p>
+            <div class="card-chips-row">
+              <span class="tech-chip">English (Fluent)</span>
+              <span class="tech-chip">Hindi (Fluent)</span>
+              <span class="tech-chip">Bengali (Native)</span>
+              <span class="tech-chip">Kannada (Conversational)</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- ==========================================================================
+       CONNECT MODAL DIALOG
+       ========================================================================== -->
+  <div class="connect-modal-overlay" id="connect-modal">
+    <div class="connect-dialog">
+      <div class="connect-dialog-header">
+        <h3 class="connect-dialog-title">Let's Connect &amp; Collaborate</h3>
+        <button class="connect-dialog-close" id="connect-modal-close" title="Close Modal">✕</button>
+      </div>
+
+      <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+        I am currently available as an <strong>Immediate Joiner</strong> for consulting engagements, analytics leadership, and full-time opportunities. Based in Delhi, India, with complete openness to relocation and remote positions globally.
+      </p>
+
+      <div class="direct-email-box">
+        <a href="mailto:pranavghosh19@gmail.com" class="email-address-text" style="text-decoration: none; color: inherit;">pranavghosh19@gmail.com</a>
+        <button id="btn-copy-email" class="btn-copy-email">COPY EMAIL</button>
+      </div>
+
+      <div class="connect-links-row">
+        <a href="https://wa.me/919821921465?text=Hi%20Pranav%2C%20got%20your%20number%20from%20your%20Portfolio.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" id="btn-whatsapp-connect">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-12.416c-5.514 0-10 4.486-10 10 0 1.76.459 3.413 1.261 4.856l-1.3 4.76 4.887-1.281c1.395.763 2.985 1.198 4.673 1.198 5.514 0 10-4.486 10-10s-4.486-10-10-10z"/>
+          </svg>
+          <span>WhatsApp Chat</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1pM4QU5h2h_4ncfhvDfFU4LmVK_NWsJRH/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lets-connect" style="padding: 0.65rem 1.4rem; font-size: 0.85rem;">
+          <span>📄 Download CV (PDF)</span>
+        </a>
+        <a href="https://www.linkedin.com/in/pranavghosh19/" target="_blank" rel="noopener noreferrer" class="nav-secondary-btn" style="padding: 0.65rem 1.2rem; font-size: 0.85rem;">
+          <span>LinkedIn ↗</span>
+        </a>
+        <a href="https://github.com/PranavGhosh19" target="_blank" rel="noopener noreferrer" class="nav-secondary-btn" style="padding: 0.65rem 1.2rem; font-size: 0.85rem;">
+          <span>GitHub ↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       PRANAV AI COPILOT MODAL
+       ========================================================================== -->
+  <div class="copilot-modal-overlay" id="copilot-modal">
+    <div class="copilot-dialog">
+      <div class="copilot-header">
+        <div class="copilot-header-info">
+          <div class="copilot-avatar">✦</div>
+          <div>
+            <div class="copilot-title">Pranav AI Assistant</div>
+            <div class="copilot-subtitle">Grounded Knowledge Base • BCG, Products &amp; Data Science</div>
+          </div>
+        </div>
+        <button id="copilot-close-btn" class="copilot-close-btn" title="Close Dialog">✕</button>
+      </div>
+
+      <div class="copilot-messages-area" id="copilot-messages">
+        <div class="chat-bubble assistant">
+          Hi! I am Pranav's AI Assistant. You can ask me about his consulting at <strong>Boston Consulting Group (BCG)</strong> and <strong>Visa</strong>, his founded products (<strong>Torque Care</strong>, <strong>Niravana</strong>, <strong>Shadow Analytics</strong>, <strong>SwingStatsPro</strong>), technical skills, or immediate availability. How can I help?
+        </div>
+      </div>
+
+      <div class="copilot-suggested-prompts">
+        <button class="prompt-chip">What is Pranav's role at BCG?</button>
+        <button class="prompt-chip">Tell me about Torque Care &amp; Niravana</button>
+        <button class="prompt-chip">Tell me about Shadow Analytics &amp; SwingStatsPro</button>
+        <button class="prompt-chip">What is his availability &amp; CV?</button>
+      </div>
+
+      <div class="copilot-input-area">
+        <input type="text" id="copilot-input" class="copilot-input" placeholder="Ask about BCG projects, Power BI, Python, products, availability...">
+        <button id="copilot-send-btn" class="copilot-send-btn" title="Send Question">→</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: Main Dashboard Logic -->
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Wisely App Case Study | AI Personal &amp; Group Finance Platform</title>
+  <meta name="description" content="Detailed engineering and business case study of The Wisely App: a unified personal budgeting and group expense management platform better than Splitwise.">
+  <meta name="author" content="Pranav Ghosh">
+  <meta property="og:title" content="The Wisely App — AI Personal &amp; Group Finance Case Study">
+  <meta property="og:description" content="How The Wisely App bridges personal budgeting with group expense splitting into a unified, AI-driven financial operating system.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+  <div class="bg-atmosphere"></div>
+
+  <!-- ==========================================================================
+       DASHBOARD TOP NAVBAR
+       Left: PranavGhosh | Centre: Role Switcher | Right: Let's Connect
+       ========================================================================== -->
+  <header class="dashboard-navbar">
+    
+    <!-- Left: PranavGhosh -->
+    <div class="nav-left">
+      <button class="nav-toggle-sidebar-btn" id="mobile-sidebar-toggle" title="Toggle Navigation Sidebar">
+        <span>☰</span>
+      </button>
+
+      <a href="../index.html#overview" class="brand-anchor">
+        <div class="brand-avatar-mini">PG</div>
+        <div class="brand-text-name">Pranav<span>Ghosh</span></div>
+      </a>
+    </div>
+
+    <!-- Centre: Two separate role buttons with Liquid Glass Sliding Track -->
+    <div class="nav-centre">
+      <div class="nav-role-slider-track" id="nav-role-slider-track" data-mode="builder">
+        <div class="nav-role-slider-thumb" id="nav-role-slider-thumb"></div>
+        <button class="nav-role-pill" data-mode="consultant" id="nav-pill-consultant" type="button" title="Switch to Data &amp; AI Consultant view">
+          <span class="nav-centre-dot"></span>
+          <span>Data &amp; AI Consultant</span>
+        </button>
+        <button class="nav-role-pill nav-role-pill-builder active" data-mode="builder" id="nav-pill-builder" type="button" title="Switch to AI Product Builder view">
+          <span class="nav-centre-dot dot-yellow"></span>
+          <span>AI Product Builder</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right: Download PDF & Let's Connect Button -->
+    <div class="nav-right" style="display: flex; align-items: center; gap: 0.65rem;">
+      <a href="../assets/docs/the-wisely-app-case-study.pdf" download="The-Wisely-App-Case-Study.pdf" class="nav-download-pdf-btn" title="Download The Wisely App 1-Page Case Study PDF">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        <span>Download PDF</span>
+      </a>
+      <button id="btn-open-connect-modal" class="btn-lets-connect" title="Connect with Pranav">
+        <span>Let's Connect</span>
+        <span>→</span>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- ==========================================================================
+       SECONDARY SUB-NAVBAR: SHOWING PRODUCTS (Direct 1-Click Platform Switcher)
+       ========================================================================== -->
+  <nav class="cs-products-subnav" aria-label="AI Products Directory">
+    <div class="cs-subnav-container">
+      <div class="cs-subnav-track">
+        <a href="shadow-analytics.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">📄</span>
+          <span class="cs-subnav-name">Shadow Analytics</span>
+          <span class="cs-subnav-tag">Doc AI</span>
+        </a>
+        <a href="the-wisely-app.html" class="cs-subnav-pill active">
+          <span class="cs-subnav-icon">💳</span>
+          <span class="cs-subnav-name">The Wisely App</span>
+          <span class="cs-subnav-tag">Finance</span>
+        </a>
+        <a href="swingstatspro.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">⛳</span>
+          <span class="cs-subnav-name">SwingStatsPro</span>
+          <span class="cs-subnav-tag">Sports</span>
+        </a>
+        <a href="shipcargo.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">🚢</span>
+          <span class="cs-subnav-name">ShipCargo</span>
+          <span class="cs-subnav-tag">Logistics</span>
+        </a>
+        <a href="torque-care.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">🚗</span>
+          <span class="cs-subnav-name">Torque Care</span>
+          <span class="cs-subnav-tag">Auto Care</span>
+        </a>
+        <a href="nirvana.html" class="cs-subnav-pill">
+          <span class="cs-subnav-icon">🧘</span>
+          <span class="cs-subnav-name">Nirvana</span>
+          <span class="cs-subnav-tag">Health</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="case-study-wrapper">
+
+    <!-- Hero Header -->
+    <section class="cs-hero">
+      <div class="cs-hero-topline">
+        <div class="cs-badge-group">
+          <span class="cs-badge">Case Study #02</span>
+          <span class="cs-badge badge-live">
+            <span class="pulse-dot"></span>
+            <span>Live Platform • thewiselyapp.com</span>
+          </span>
+        </div>
+        <span class="cs-badge" style="background: rgba(0,0,0,0.04); color: var(--text-secondary); border-color: var(--border-card);">Consumer FinTech &amp; AI</span>
+      </div>
+
+      <h1 class="cs-hero-title">The Wisely App</h1>
+      <p class="cs-hero-subtitle">
+        An AI-powered personal and group finance ecosystem that bridges individual budgeting with group expense splitting, delivering a unified financial picture far superior to legacy settlement ledgers.
+      </p>
+
+      <!-- Redesigned Hero Meta & Live Web Preview Window -->
+      <div class="cs-live-window-stage">
+        
+        <!-- Meta Specification Strip -->
+        <div class="cs-live-meta-strip">
+          <div class="cs-meta-pill">
+            <span class="cs-meta-pill-label">Positioning</span>
+            <span class="cs-meta-pill-val">Better than Splitwise</span>
+          </div>
+          <div class="cs-meta-pill">
+            <span class="cs-meta-pill-label">Role</span>
+            <span class="cs-meta-pill-val">Product Founder &amp; Full-Stack Eng</span>
+          </div>
+          <div class="cs-meta-pill">
+            <span class="cs-meta-pill-label">Core Tech</span>
+            <span class="cs-meta-pill-val">Next.js • Firebase • PWA • Tailwind</span>
+          </div>
+          <div class="cs-meta-pill cs-meta-pill-cta">
+            <span class="cs-meta-pill-label">Live Deployment</span>
+            <a href="https://www.thewiselyapp.com" target="_blank" rel="noopener noreferrer" class="cs-live-url-anchor" title="Open full platform in new window">
+              <span class="live-ping-dot"></span>
+              <span>thewiselyapp.com</span>
+              <span>↗</span>
+            </a>
+          </div>
+          <div class="cs-meta-pill cs-meta-pill-pdf">
+            <span class="cs-meta-pill-label">Executive One-Pager</span>
+            <a href="../assets/docs/the-wisely-app-case-study.pdf" download="The-Wisely-App-Case-Study.pdf" class="cs-pdf-download-anchor" title="Download The Wisely App Case Study PDF">
+              <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                </svg>
+                <span>Download PDF</span>
+              </span>
+              <span class="cs-pdf-badge-tag">PDF</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sleek macOS-Style Live Web Window -->
+        <div class="cs-web-window">
+          <!-- Window Header Bar -->
+          <div class="cs-window-chrome">
+            <div class="window-traffic-lights">
+              <span class="traffic-light light-red" title="Close"></span>
+              <span class="traffic-light light-yellow" title="Minimize"></span>
+              <span class="traffic-light light-green" title="Expand"></span>
+            </div>
+
+            <!-- Address Bar with SSL Lock -->
+            <div class="window-address-bar">
+              <span class="ssl-lock" title="Secure SSL Connection">🔒</span>
+              <span class="address-prefix">https://</span>
+              <span class="address-host">thewiselyapp.com</span>
+              <span class="window-badge-live">LIVE APPLICATION</span>
+            </div>
+
+            <!-- Window Quick Actions -->
+            <div class="window-actions">
+              <button type="button" class="window-action-btn btn-refresh-window" title="Reload Web Window" aria-label="Reload Web Window">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                </svg>
+              </button>
+              <a href="https://www.thewiselyapp.com" target="_blank" rel="noopener noreferrer" class="window-action-btn" title="Open in New Tab" aria-label="Open in New Tab">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Window Viewport with Canvas Screenshot Preview -->
+          <div class="cs-window-viewport">
+            <canvas aria-hidden="true" aria-label="Preview Screenshot of thewiselyapp.com" class="cs-preview-canvas animate-blurIn" role="img" style="width: 100%; height: 100%;" width="1440" height="900" data-preview-src="../assets/images/preview-thewiselyapp.png"></canvas>
+
+            <!-- Interactive Hover Overlay with Launch Action -->
+            <div class="cs-preview-hover-overlay">
+              <a href="https://www.thewiselyapp.com" target="_blank" rel="noopener noreferrer" class="cs-hover-launch-card">
+                <span>Explore Live Platform</span>
+                <span class="launch-icon">↗</span>
+              </a>
+            </div>
+
+            <div class="cs-window-footer-bar">
+              <div class="cs-window-status">
+                <span class="status-indicator"></span>
+                <span>Verified Production UI Preview • 1440×900 Capture</span>
+              </div>
+              <a href="https://www.thewiselyapp.com" target="_blank" rel="noopener noreferrer" class="cs-window-launch-link">
+                <span>Open Live Platform</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sticky Narrative Navigation (The 6-Part Framework) -->
+    <nav class="cs-story-nav" aria-label="Case Study Sections">
+      <a href="#problem" class="cs-story-link active">
+        <span class="link-num">01</span>
+        <span>The Problem</span>
+      </a>
+      <a href="#solution" class="cs-story-link">
+        <span class="link-num">02</span>
+        <span>The Solution</span>
+      </a>
+      <a href="#approach" class="cs-story-link">
+        <span class="link-num">03</span>
+        <span>The Approach</span>
+      </a>
+      <a href="#architecture" class="cs-story-link">
+        <span class="link-num">04</span>
+        <span>The Architecture</span>
+      </a>
+      <a href="#data-gathering" class="cs-story-link">
+        <span class="link-num">05</span>
+        <span>The Data Gathering</span>
+      </a>
+      <a href="#future-scope" class="cs-story-link">
+        <span class="link-num">06</span>
+        <span>The Future Business Scope</span>
+      </a>
+    </nav>
+
+    <!-- =========================================================
+         SECTION 1: THE PROBLEM
+         ========================================================= -->
+    <section id="problem" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 01 • Business Friction</div>
+        <h2 class="cs-section-title">The Problem: The Great Financial App Fragmentation</h2>
+        <p class="cs-section-tagline">Why expense-splitting tools and budgeting apps leave users blind to their true net position.</p>
+      </div>
+
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">🎯 The Target User</h3>
+          <p class="cs-card-text">
+            Young professionals, roommates, travel groups, and couples who manage shared living expenses, group weekend trips, and individual daily budgets simultaneously across multiple banking cards and apps.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">⚠️ The Underlying Pain Point</h3>
+          <p class="cs-card-text">
+            Legacy tools like Splitwise operate strictly as peer-to-peer settlement ledgers. They tell you who owes whom, but know nothing about your monthly rent budget, credit card liabilities, or grocery targets. Conversely, budgeting apps treat group splits as random, distortive cash leaks.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">💸 Reconciliation Friction</h3>
+          <p class="cs-card-text">
+            Friends end up with confusing circular debts, spending 25+ minutes cross-checking spreadsheets after every trip, while fronting dinner expenses causes cashflow distortion.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 2: THE SOLUTION
+         ========================================================= -->
+    <section id="solution" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 02 • Core Product Value</div>
+        <h2 class="cs-section-title">The Solution: Unified Personal &amp; Group Financial Intelligence</h2>
+        <p class="cs-section-tagline">Bridging social spending and individual wealth into one seamless, real-time platform.</p>
+      </div>
+
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">💳 Unified Net Position</h3>
+          <p class="cs-card-text">
+            A single dashboard showing your actual financial standing—combining personal bank balances with group liabilities and receivables.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">⚡ Greedy Debt Minimizer</h3>
+          <p class="cs-card-text">
+            Graph-based flow network algorithms automatically consolidate complex group debts into the fewest direct transactions possible.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">🤖 AI Spending Copilot</h3>
+          <p class="cs-card-text">
+            Plain-English conversational insights: <em>"You fronted 72% of group dining expenses this month. You are owed $340 across 3 friends."</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 3: THE APPROACH
+         ========================================================= -->
+    <section id="approach" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 03 • Strategic Execution</div>
+        <h2 class="cs-section-title">The Approach: Frictionless Onboarding &amp; Mathematical Simplicity</h2>
+        <p class="cs-section-tagline">Strategic product design choices that eliminate app-store barriers and simplify settlements.</p>
+      </div>
+
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">📱 Zero-Install Web PWA</h3>
+          <p class="cs-card-text">
+            Bypassed app store download friction completely with a progressive web app that loads in &lt;10 seconds via simple QR code scans.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">🛡️ Mathematical Integrity</h3>
+          <p class="cs-card-text">
+            Replaced manual ledger math with a provably correct debt simplification algorithm guaranteeing all group accounts sum to zero.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">🤝 Fair Monetization</h3>
+          <p class="cs-card-text">
+            Free forever for core group splits without intrusive paywalls, monetizing advanced AI insights and automated financial planning tools.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 4: THE ARCHITECTURE
+         ========================================================= -->
+    <section id="architecture" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 04 • System Engineering</div>
+        <h2 class="cs-section-title">The Architecture: Reactive Real-Time Full-Stack Engine</h2>
+        <p class="cs-section-tagline">Exploring the live architecture of The Wisely App at thewiselyapp.com.</p>
+      </div>
+
+      <!-- Pipeline / User Flow -->
+      <div class="pipeline-viz-container">
+        <div class="pipeline-viz-title">⚡ Implemented Architecture &amp; Data Flow</div>
+        <div class="pipeline-flow">
+          <div class="pipeline-node">
+            <span class="p-node-step">Input</span>
+            <span class="p-node-title">QR / Link Join</span>
+            <span class="p-node-sub">Instant zero-auth group entry</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node node-highlight">
+            <span class="p-node-step">Ledger</span>
+            <span class="p-node-title">Real-Time Sync</span>
+            <span class="p-node-sub">Firestore reactive listeners</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node">
+            <span class="p-node-step">Engine</span>
+            <span class="p-node-title">Debt Simplifier</span>
+            <span class="p-node-sub">Greedy flow network reduction</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node node-highlight">
+            <span class="p-node-step">AI Module</span>
+            <span class="p-node-title">Spending Analytics</span>
+            <span class="p-node-sub">Category trend anomalies</span>
+          </div>
+          <span class="pipeline-arrow">→</span>
+          <div class="pipeline-node">
+            <span class="p-node-step">Output</span>
+            <span class="p-node-title">Net Position Card</span>
+            <span class="p-node-sub">Live personal financial balance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Matrix -->
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">💳 Multi-Ledger Spaces</h3>
+          <p class="cs-card-text">
+            Switch effortlessly between individual expense tracking and shared group spaces (Roommates, Vacation, Friday Lunch) in one tap.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">⚡ Offline-First Sync</h3>
+          <p class="cs-card-text">
+            Service worker caching allows users to log expenses on vacation even without cell reception; syncs automatically once back online.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">🔐 Role-Based Security</h3>
+          <p class="cs-card-text">
+            Granular Firestore security rules restrict expense edits strictly to verified group participants and transaction owners.
+          </p>
+        </div>
+      </div>
+
+      <div class="contribution-box">
+        <div class="contribution-title">Pranav's Individual Architectural Contribution</div>
+        <div class="contribution-text">
+          Designed and engineered The Wisely App from scratch: configured Firebase Firestore database security rules for isolated user data, wrote the debt-simplification graph algorithm in TypeScript, implemented the mobile-first responsive UI using Next.js and Tailwind CSS, and deployed the production app to <a href="https://www.thewiselyapp.com" target="_blank" rel="noopener noreferrer" style="color: var(--yellow-subtle); font-weight: 600;">thewiselyapp.com</a>.
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 5: THE DATA GATHERING
+         ========================================================= -->
+    <section id="data-gathering" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 05 • Input Telemetry &amp; Ingestion</div>
+        <h2 class="cs-section-title">The Data Gathering: User Logs &amp; Group Ledgers</h2>
+        <p class="cs-section-tagline">How individual expenses and group split transactions are gathered, validated, and normalized.</p>
+      </div>
+
+      <div class="cs-grid-3col">
+        <div class="cs-card">
+          <h3 class="cs-card-title">📝 User Ingestion Inputs</h3>
+          <p class="cs-card-text">
+            Quick-entry expense modal collecting amount, currency, custom category tags (Rent, Dining, Flights), payer identity, and split weights.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">🧾 Receipt Image Processing</h3>
+          <p class="cs-card-text">
+            Client-side image compression and OCR extraction parse total amount, tax breakdowns, and vendor names from camera snaps.
+          </p>
+        </div>
+        <div class="cs-card">
+          <h3 class="cs-card-title">📊 Multi-Currency Normalization</h3>
+          <p class="cs-card-text">
+            Live FX rate feeds normalize international travel expenses into a single unified settlement currency for transparent group reconciliation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 6: THE FUTURE BUSINESS SCOPE
+         ========================================================= -->
+    <section id="future-scope" class="cs-section">
+      <div class="cs-section-header">
+        <div class="cs-section-step">Section 06 • Scalability &amp; Commercialization</div>
+        <h2 class="cs-section-title">The Future Business Scope: Autonomous Household Banking</h2>
+        <p class="cs-section-tagline">Scaling from split ledgers to automated predictive banking integrations.</p>
+      </div>
+
+      <div class="roadmap-timeline-grid">
+        <div class="roadmap-card">
+          <span class="roadmap-period">Phase 01</span>
+          <h4 class="roadmap-title">Account Aggregator &amp; Open Banking</h4>
+          <p class="roadmap-desc">
+            Integrate Open Banking APIs (Plaid / Setu) for auto-fetching card transactions, eliminating manual entry for utility and grocery expenses.
+          </p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-period">Phase 02</span>
+          <h4 class="roadmap-title">Predictive Cashflow Warnings</h4>
+          <p class="roadmap-desc">
+            Analyze historical recurring debits to warn roommates 7 days before rent is due if their personal checking balance is running low.
+          </p>
+        </div>
+
+        <div class="roadmap-card">
+          <span class="roadmap-period">Phase 03</span>
+          <h4 class="roadmap-title">In-App UPI &amp; Venmo Settlement</h4>
+          <p class="roadmap-desc">
+            Deep-link one-tap settlement payments directly through UPI and payment gateways with instant automatic mark-as-paid receipt generation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Revenue Model Simulator -->
+      <div class="calculator-container" data-model-type="subscription" data-unit-cost="0.35">
+        <div class="calc-header">
+          <h3 class="calc-title">Interactive Subscription &amp; Margin Simulator</h3>
+          <p class="calc-subtext">Model Wisely Pro subscription growth, monthly pricing, and projected gross contribution after server and LLM inference costs.</p>
+        </div>
+
+        <div class="calc-layout">
+          <div class="calc-inputs">
+            <div class="calc-input-group">
+              <div class="calc-label-row">
+                <span>Paying Pro Subscribers:</span>
+                <span class="calc-current-val" id="calc-vol-val">2,500</span>
+              </div>
+              <input type="range" class="calc-range" id="calc-vol" min="500" max="50000" step="500" value="2500">
+            </div>
+
+            <div class="calc-input-group">
+              <div class="calc-label-row">
+                <span>Monthly Pro Price:</span>
+                <span class="calc-current-val" id="calc-price-val">$4.99</span>
+              </div>
+              <input type="range" class="calc-range" id="calc-price" min="2.99" max="9.99" step="0.50" value="4.99">
+            </div>
+
+            <div class="calc-formula-note">
+              Model assumption: Variable delivery cost is modeled at $0.35/user/month (Firebase Firestore reads/writes + Gemini API query quota).
+            </div>
+          </div>
+
+          <div class="calc-outputs">
+            <div class="output-row">
+              <span class="output-label">Monthly Recurring Revenue (MRR):</span>
+              <span class="output-val" id="out-mrr">$12,475</span>
+            </div>
+            <div class="output-row">
+              <span class="output-label">Estimated Monthly COGS:</span>
+              <span class="output-val" style="color: var(--text-muted);" id="out-cogs">$875</span>
+            </div>
+            <div class="output-row">
+              <span class="output-label">Monthly Contribution Margin:</span>
+              <span class="output-val highlight" id="out-contribution">$11,600</span>
+            </div>
+            <div class="output-row">
+              <span class="output-label">Gross Margin Percentage:</span>
+              <span class="output-val" style="color: var(--yellow-subtle);" id="out-margin">93.0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conversion Box -->
+      <div class="cs-conversion-cta">
+        <div class="cta-tag">Let's Connect</div>
+        <h3 class="cta-title">Interested in Consumer FinTech &amp; AI Products?</h3>
+        <p class="cta-subtitle">
+          Let's discuss product design, full-stack architecture, viral growth mechanics, or building seamless digital finance experiences.
+        </p>
+        <div class="cta-actions">
+          <a href="../assets/docs/the-wisely-app-case-study.pdf" download="The-Wisely-App-Case-Study.pdf" class="cta-btn-pdf" title="Download The Wisely App Case Study PDF">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            <span>Download PDF Summary</span>
+          </a>
+          <a href="https://wa.me/919821921465?text=Hi%20Pranav,%20saw%20your%20Wisely%20App%20case%20study%20and%20would%20love%20to%20discuss%20consumer%20fintech." target="_blank" rel="noopener noreferrer" class="cta-btn-gold">
+            <span>Book a Conversation</span>
+            <span>💬</span>
+          </a>
+          <a href="https://www.thewiselyapp.com" target="_blank" rel="noopener noreferrer" class="cta-btn-ghost">
+            <span>Explore The Wisely App</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Pagination Footer -->
+      <div class="cs-pagination-footer">
+        <a href="shadow-analytics.html" class="cs-page-nav-card">
+          <span class="cs-page-nav-direction">← Previous Case Study</span>
+          <span class="cs-page-nav-name">Shadow Analytics</span>
+        </a>
+        <a href="swingstatspro.html" class="cs-page-nav-card" style="text-align: right;">
+          <span class="cs-page-nav-direction">Next Case Study →</span>
+          <span class="cs-page-nav-name">SwingStatsPro</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ==========================================================================
+       CONNECT MODAL DIALOG
+       ========================================================================== -->
+  <div class="connect-modal-overlay" id="connect-modal">
+    <div class="connect-dialog">
+      <div class="connect-dialog-header">
+        <h3 class="connect-dialog-title">Let's Connect &amp; Collaborate</h3>
+        <button class="connect-dialog-close" id="connect-modal-close" title="Close Modal">✕</button>
+      </div>
+
+      <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
+        I am currently available as an <strong>Immediate Joiner</strong> for consulting engagements, analytics leadership, and full-time opportunities. Based in Delhi, India, with complete openness to relocation and remote positions globally.
+      </p>
+
+      <div class="direct-email-box">
+        <a href="mailto:pranavghosh19@gmail.com" class="email-address-text" style="text-decoration: none; color: inherit;">pranavghosh19@gmail.com</a>
+        <button id="btn-copy-email" class="btn-copy-email">COPY EMAIL</button>
+      </div>
+
+      <div class="connect-links-row">
+        <a href="https://wa.me/919821921465?text=Hi%20Pranav%2C%20got%20your%20number%20from%20your%20Portfolio.%20Can%20we%20connect%3F" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" id="btn-whatsapp-connect">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-12.416c-5.514 0-10 4.486-10 10 0 1.76.459 3.413 1.261 4.856l-1.3 4.76 4.887-1.281c1.395.763 2.985 1.198 4.673 1.198 5.514 0 10-4.486 10-10s-4.486-10-10-10z"/>
+          </svg>
+          <span>WhatsApp Chat</span>
+        </a>
+        <a href="https://drive.google.com/file/d/1pM4QU5h2h_4ncfhvDfFU4LmVK_NWsJRH/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-lets-connect" style="padding: 0.65rem 1.4rem; font-size: 0.85rem;">
+          <span>📄 Download CV (PDF)</span>
+        </a>
+        <a href="https://www.linkedin.com/in/pranavghosh19/" target="_blank" rel="noopener noreferrer" class="nav-secondary-btn">
+          <span>LinkedIn ↗</span>
+        </a>
+        <a href="https://github.com/PranavGhosh19" target="_blank" rel="noopener noreferrer" class="nav-secondary-btn">
+          <span>GitHub ↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="case-study.js"></script>
+</body>
+</html>
