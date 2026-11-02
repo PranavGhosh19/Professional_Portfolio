@@ -2687,14 +2687,12 @@ body[data-active-page="products"] .products-overview-grid {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.42s var(--spring-snappy), 
-              box-shadow 0.45s var(--spring-snappy), 
+  transition: box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
               border-color 0.25s ease,
-              background 0.28s ease;
+              background 0.3s ease;
   position: relative;
   overflow: hidden;
-  transform-style: preserve-3d;
-  will-change: transform, box-shadow;
+  will-change: box-shadow, border-color, background;
 }
 
 .dashboard-card::before {
@@ -2734,7 +2732,6 @@ body[data-active-page="products"] .products-overview-grid {
 }
 
 .dashboard-card:active {
-  transform: scale(0.99) translateZ(0);
   transition-duration: 0.12s;
 }
 
@@ -2744,7 +2741,7 @@ body[data-active-page="products"] .products-overview-grid {
   box-shadow: 0 0 0 2px var(--yellow-subtle), 0 20px 48px rgba(216, 152, 35, 0.16), var(--glass-inner-bevel);
 }
 
-/* 3D Layered Elevation Pop inside Cards */
+/* Smooth Specular Layering inside Cards */
 .card-top-header,
 .card-icon,
 .exp-company-logo,
@@ -2753,8 +2750,8 @@ body[data-active-page="products"] .products-overview-grid {
 .kpi-title-row,
 .landing-icon-badge,
 .exp-horizontal-left {
-  transform: translateZ(28px);
-  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 9;
 }
 
 .card-role-title,
@@ -2762,8 +2759,8 @@ body[data-active-page="products"] .products-overview-grid {
 .journey-v-title,
 .landing-welcome-title,
 .exp-role-title-row {
-  transform: translateZ(22px);
-  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 9;
 }
 
 .exp-client-pill,
@@ -2773,15 +2770,16 @@ body[data-active-page="products"] .products-overview-grid {
 .card-duration-badge,
 .nav-landing-pill,
 .card-action-btn {
-  transform: translateZ(32px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .card-chips-row,
 .card-actions-row,
 .exp-clients-pills {
-  transform: translateZ(24px);
+  position: relative;
+  z-index: 10;
 }
 
 .card-top-header {
@@ -4777,16 +4775,15 @@ body[data-active-page="products"] .products-overview-grid {
   background: rgba(255, 255, 255, 0.92);
   border: 1.5px solid var(--border-card);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), inset 0 1px 2px #FFFFFF;
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background 0.35s ease, border-color 0.3s ease, box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   scroll-margin-top: 100px;
   cursor: pointer;
 }
 
 .case-study-card:hover {
-  transform: translateY(-5px);
   background: #FFFFFF;
-  border-color: rgba(216, 152, 35, 0.45);
-  box-shadow: 0 18px 44px -8px rgba(216, 152, 35, 0.16), inset 0 1px 2px #FFFFFF;
+  border-color: rgba(216, 152, 35, 0.55);
+  box-shadow: 0 16px 36px -4px rgba(216, 152, 35, 0.18), 0 0 0 1px rgba(216, 152, 35, 0.25), inset 0 1px 2px #FFFFFF;
 }
 
 .case-study-card.pulse-target {
@@ -4872,16 +4869,24 @@ body[data-active-page="products"] .products-overview-grid {
   align-items: center;
   gap: 3px;
   margin-top: 2px;
+  position: relative;
+  z-index: 10;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
 .case-study-live-link:hover {
   text-decoration: underline;
+  background: rgba(216, 152, 35, 0.1);
 }
 
 .case-study-meta-cluster {
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
+  z-index: 10;
 }
 
 .case-study-domain-tag {
@@ -4906,6 +4911,8 @@ body[data-active-page="products"] .products-overview-grid {
   font-size: 0.85rem;
   text-decoration: none;
   transition: all 0.2s ease;
+  position: relative;
+  z-index: 10;
 }
 
 .case-study-card:hover .case-study-arrow {
@@ -5331,6 +5338,8 @@ body[data-active-page="products"] .products-overview-grid {
   margin-top: 0.9rem;
   padding-top: 0.85rem;
   border-top: 1px solid var(--border-card);
+  position: relative;
+  z-index: 10;
 }
 
 .case-study-read-btn {
@@ -5347,6 +5356,8 @@ body[data-active-page="products"] .products-overview-grid {
   background: rgba(216, 152, 35, 0.12);
   border: 1px solid var(--yellow-border);
   transition: all 0.2s ease;
+  position: relative;
+  z-index: 10;
 }
 
 .case-study-card:hover .case-study-read-btn {

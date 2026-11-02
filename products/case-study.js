@@ -106,16 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // -------------------------------------------------------------
-  // 3. Specular 3D Lighting & Damped Tilt for Web Window Preview
+  // 3. Specular Glow for Web Window Preview (Smooth morphing without tilt)
   // -------------------------------------------------------------
   if (!prefersReducedMotion) {
     const webWindows = document.querySelectorAll('.cs-web-window');
     webWindows.forEach((win) => {
       let rect = null;
-      let rafId = null;
 
       const onMouseEnter = () => {
         rect = win.getBoundingClientRect();
+        win.style.setProperty('--spot-opacity', '1');
       };
 
       const onMouseMove = (e) => {
@@ -125,23 +125,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const px = (x / rect.width) * 100;
         const py = (y / rect.height) * 100;
 
-        // Subtle tilt (max 3 degrees)
-        const rotateX = ((y / rect.height) - 0.5) * -3.5;
-        const rotateY = ((x / rect.width) - 0.5) * 3.5;
-
-        if (rafId) cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(() => {
-          win.style.setProperty('--mouse-x', `${px.toFixed(1)}%`);
-          win.style.setProperty('--mouse-y', `${py.toFixed(1)}%`);
-          win.style.setProperty('--spot-opacity', '1');
-          win.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-2px)`;
-        });
+        win.style.setProperty('--mouse-x', `${px.toFixed(1)}%`);
+        win.style.setProperty('--mouse-y', `${py.toFixed(1)}%`);
       };
 
       const onMouseLeave = () => {
-        if (rafId) cancelAnimationFrame(rafId);
         win.style.setProperty('--spot-opacity', '0');
-        win.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
         rect = null;
       };
 

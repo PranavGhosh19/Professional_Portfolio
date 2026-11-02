@@ -428,14 +428,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // -------------------------------------------------------------
   // 3b. AI Product Cards - Direct Click Navigation to Dedicated Case Study Page
-  // Clicking anywhere inside a case-study-card opens its dedicated product case study
+  // Clicking on non-anchor content inside a case-study-card opens its dedicated product case study
   // -------------------------------------------------------------
   const caseStudyCards = document.querySelectorAll('.case-study-card');
   caseStudyCards.forEach((card) => {
     card.addEventListener('click', (e) => {
-      // If user clicked directly on the live external deployment link, allow native target="_blank"
-      const liveLink = e.target.closest('.case-study-live-link');
-      if (liveLink) return;
+      // If user clicked any anchor, button, or link, let the native link work
+      const interactiveTarget = e.target.closest('a, button, input');
+      if (interactiveTarget) return;
 
       // If user is selecting text (e.g. copying content), don't navigate
       const selection = window.getSelection();
@@ -672,10 +672,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // -------------------------------------------------------------
-  // 3D SPATIAL MOTION, SCROLL DEPTH & HOLOGRAPHIC CARD TILT ENGINE
+  // 3D SPATIAL MOTION, SCROLL DEPTH & CARD GLOW ENGINE
   // -------------------------------------------------------------
 
-  // 1. Interactive 3D Holographic Card Tilt & Specular Shine
+  // 1. Smooth Specular Radial Glow Tracking (No disruptive card displacement/tilting)
   const interactiveCards = document.querySelectorAll(
     '.dashboard-card, .kpi-card, .experience-card-horizontal, .journey-v-card, .landing-welcome-card'
   );
@@ -685,57 +685,43 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!reducedMotion) {
     interactiveCards.forEach((card) => {
       let isHovered = false;
-      let curRotX = 0, curRotY = 0, curZ = 0;
-      let targetRotX = 0, targetRotY = 0, targetZ = 0;
+      let targetOpacity = 0;
+      let curOpacity = 0;
       let rafId = null;
 
-      const updateTilt = () => {
-        curRotX += (targetRotX - curRotX) * 0.16;
-        curRotY += (targetRotY - curRotY) * 0.16;
-        curZ += (targetZ - curZ) * 0.16;
+      const updateGlow = () => {
+        curOpacity += (targetOpacity - curOpacity) * 0.15;
+        card.style.setProperty('--spot-opacity', curOpacity.toFixed(3));
 
-        if (isHovered || Math.abs(curRotX) > 0.05 || Math.abs(curRotY) > 0.05) {
-          card.style.transform = `perspective(1000px) rotateX(${curRotX.toFixed(2)}deg) rotateY(${curRotY.toFixed(2)}deg) translateZ(${curZ.toFixed(1)}px)`;
-          rafId = requestAnimationFrame(updateTilt);
+        if (isHovered || curOpacity > 0.01) {
+          rafId = requestAnimationFrame(updateGlow);
         } else {
-          card.style.transform = '';
+          card.style.setProperty('--spot-opacity', '0');
           rafId = null;
         }
       };
 
       card.addEventListener('pointerenter', () => {
         isHovered = true;
-        targetZ = 14;
-        card.style.setProperty('--spot-opacity', '1');
-        if (!rafId) rafId = requestAnimationFrame(updateTilt);
+        targetOpacity = 1;
+        if (!rafId) rafId = requestAnimationFrame(updateGlow);
       });
 
       card.addEventListener('pointermove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        const cx = rect.width / 2;
-        const cy = rect.height / 2;
 
-        const normX = (x - cx) / cx; // -1 to 1
-        const normY = (y - cy) / cy; // -1 to 1
-
-        targetRotX = -normY * 9.5; // Max 9.5 deg tilt
-        targetRotY = normX * 9.5;
-
-        // Dynamic Specular Highlight Reflection
+        // Smooth Specular Highlight Morphing Position
         card.style.setProperty('--mouse-x', `${((x / rect.width) * 100).toFixed(1)}%`);
         card.style.setProperty('--mouse-y', `${((y / rect.height) * 100).toFixed(1)}%`);
 
-        if (!rafId) rafId = requestAnimationFrame(updateTilt);
+        if (!rafId) rafId = requestAnimationFrame(updateGlow);
       });
 
       card.addEventListener('pointerleave', () => {
         isHovered = false;
-        targetRotX = 0;
-        targetRotY = 0;
-        targetZ = 0;
-        card.style.setProperty('--spot-opacity', '0');
+        targetOpacity = 0;
       });
     });
   }
@@ -796,22 +782,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 700);
   });
 
-  // 4. Magnetic Interactive Buttons
+  // 4. Interactive Buttons (Clean subtle scale, zero coordinate shifts)
   const magneticItems = document.querySelectorAll(
     '.nav-connect-btn, .nav-role-btn, .copilot-send-btn, .trigger-copilot-btn, .card-action-btn'
   );
 
   magneticItems.forEach((btn) => {
-    btn.addEventListener('pointermove', (e) => {
+    btn.addEventListener('pointerenter', () => {
       if (reducedMotion) return;
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-
-      const pullX = (x / (rect.width / 2)) * 5;
-      const pullY = (y / (rect.height / 2)) * 4;
-
-      btn.style.transform = `translate3d(${pullX.toFixed(1)}px, ${pullY.toFixed(1)}px, 12px) scale(1.03)`;
+      btn.style.transform = 'scale(1.02)';
     });
 
     btn.addEventListener('pointerleave', () => {
