@@ -1896,86 +1896,8 @@ body {
   color: var(--text-pure);
 }
 
-/* Responsive Breakpoints */
-@media (max-width: 900px) {
-  .cs-grid-2col,
-  .cs-grid-3col,
-  .calc-layout,
-  .workflow-comparison,
-  .roadmap-timeline-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cs-live-window-stage {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-
-  .cs-window-viewport {
-    height: 300px;
-    max-height: 340px;
-  }
-
-  .cs-section {
-    padding: 2rem 1.4rem;
-  }
-
-  .cs-hero {
-    padding: 1.8rem 1.4rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .dashboard-navbar {
-    height: 64px;
-    padding: 0 1rem;
-  }
-  .cs-products-subnav {
-    top: 64px;
-    height: 46px;
-  }
-  .case-study-wrapper {
-    padding-top: calc(64px + 46px + 1.2rem);
-  }
-  .cs-story-nav {
-    top: calc(64px + 46px + 8px);
-  }
-  html {
-    scroll-padding-top: 175px;
-  }
-  .cs-subnav-lead {
-    display: none;
-  }
-  .cs-back-to-portfolio {
-    display: none;
-  }
-  .nav-role-slider-track {
-    scale: 0.9;
-    transform-origin: center;
-  }
-}
-
-@media (max-width: 600px) {
-  .brand-text-name span:not(:first-child) {
-    display: none;
-  }
-  .nav-role-pill span:not(.nav-centre-dot) {
-    display: none;
-  }
-  .nav-role-pill {
-    padding: 0.4rem 0.75rem;
-  }
-  .cs-pagination-footer {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .cs-page-nav-card {
-    max-width: 100%;
-  }
-}
-
 /* ==========================================================================
-   CONNECT MODAL DIALOG
+   CONNECT MODAL DIALOG (BASE STYLES)
    ========================================================================== */
 .connect-modal-overlay {
   position: fixed;
@@ -2149,3 +2071,381 @@ body {
 .nav-secondary-btn:active {
   transform: translateY(0) scale(0.96);
 }
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (CASCADE OVERRIDES AT BOTTOM)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .cs-grid-2col,
+  .cs-grid-3col,
+  .calc-layout,
+  .workflow-comparison,
+  .roadmap-timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-live-window-stage {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .cs-window-viewport {
+    height: 300px;
+    max-height: 340px;
+  }
+
+  .cs-section {
+    padding: 2rem 1.4rem;
+  }
+
+  .cs-hero {
+    padding: 1.8rem 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-navbar {
+    height: 64px;
+    padding: 0 1rem;
+  }
+  .cs-products-subnav {
+    top: 64px;
+    height: 46px;
+  }
+  .case-study-wrapper {
+    padding-top: calc(64px + 46px + 1.2rem);
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+  .cs-story-nav {
+    top: calc(64px + 46px + 8px);
+  }
+  html {
+    scroll-padding-top: 175px;
+  }
+  .cs-subnav-lead {
+    display: none;
+  }
+  .cs-back-to-portfolio {
+    display: none;
+  }
+  .nav-role-slider-track {
+    transform: scale(0.88);
+    transform-origin: center;
+  }
+  .cs-hero-title {
+    font-size: clamp(1.7rem, 6vw, 2.2rem);
+  }
+  .cs-hero-subtitle {
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+  .window-address-bar {
+    max-width: calc(100% - 90px);
+    min-width: 0;
+  }
+  .address-host {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-navbar {
+    height: 60px;
+    padding: 0 0.75rem;
+  }
+  .cs-products-subnav {
+    top: 60px;
+    height: 44px;
+  }
+  .case-study-wrapper {
+    padding-top: calc(60px + 44px + 1rem);
+    padding-left: 0.95rem;
+    padding-right: 0.95rem;
+    padding-bottom: 4rem;
+  }
+  .cs-story-nav {
+    top: calc(60px + 44px + 6px);
+    padding: 0.35rem 0.45rem;
+    margin-bottom: 1.6rem;
+  }
+  html {
+    scroll-padding-top: 135px;
+  }
+
+  .brand-text-name span:not(:first-child) {
+    display: none;
+  }
+
+  .nav-role-slider-track {
+    transform: none;
+    padding: 2px;
+  }
+  .nav-role-pill {
+    padding: 0.35rem 0.65rem;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+  }
+  .nav-role-pill span:not(.nav-centre-dot) {
+    display: none;
+  }
+  #nav-pill-consultant::after {
+    content: "Consultant";
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+  #nav-pill-builder::after {
+    content: "Builder";
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  .nav-right {
+    gap: 0.45rem !important;
+  }
+  .nav-download-pdf-btn {
+    padding: 0.42rem 0.65rem;
+    font-size: 0.76rem;
+    gap: 0.35rem;
+  }
+  .nav-download-pdf-btn span {
+    display: none;
+  }
+  .nav-download-pdf-btn::after {
+    content: "PDF";
+    font-weight: 700;
+  }
+  .btn-lets-connect {
+    padding: 0.42rem 0.75rem;
+    font-size: 0.78rem;
+  }
+  .btn-lets-connect span:last-child {
+    display: none;
+  }
+
+  .cs-hero {
+    padding: 1.4rem 1rem;
+  }
+  .cs-hero-topline {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .cs-live-meta-strip {
+    padding: 0.85rem;
+    gap: 0.55rem;
+  }
+  .cs-meta-pill {
+    padding: 0.65rem 0.85rem;
+  }
+  .cs-meta-pill-label {
+    font-size: 0.68rem;
+  }
+  .cs-meta-pill-val {
+    font-size: 0.82rem;
+  }
+  .cs-live-url-anchor,
+  .cs-pdf-download-anchor {
+    font-size: 0.82rem;
+    word-break: break-all;
+  }
+
+  .cs-window-chrome {
+    height: 38px;
+    padding: 0 0.5rem;
+  }
+  .cs-window-viewport {
+    height: 240px;
+    min-height: 220px;
+  }
+  .cs-window-footer-bar {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.7rem;
+  }
+  .cs-window-status {
+    font-size: 0.68rem;
+  }
+
+  .cs-story-link {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+    gap: 0.35rem;
+  }
+  .cs-story-link .link-num {
+    font-size: 0.68rem;
+  }
+
+  .cs-section {
+    padding: 1.4rem 1rem;
+    margin-bottom: 1.6rem;
+    border-radius: 16px;
+  }
+  .cs-section-header {
+    margin-bottom: 1.2rem;
+  }
+  .cs-section-title {
+    font-size: clamp(1.2rem, 4.5vw, 1.4rem);
+  }
+  .cs-card {
+    padding: 1.15rem 0.95rem;
+    border-radius: 14px;
+  }
+  .cs-card-title {
+    font-size: 0.96rem;
+  }
+  .cs-card-text {
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+  .wf-col {
+    padding: 1.15rem 0.95rem;
+    border-radius: 14px;
+  }
+  .contribution-box {
+    padding: 1.15rem 0.95rem;
+    border-radius: 0 12px 12px 0;
+    margin: 1.2rem 0;
+  }
+
+  .pipeline-viz-container {
+    padding: 1.2rem 0.95rem;
+  }
+  .pipeline-flow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .pipeline-arrow {
+    transform: rotate(90deg);
+    align-self: center;
+    margin: 0.2rem 0;
+    font-size: 1rem;
+  }
+  .pipeline-node {
+    width: 100%;
+    min-width: auto;
+    padding: 0.75rem 0.95rem;
+  }
+
+  .calc-outputs {
+    padding: 1.15rem 0.95rem;
+  }
+  .output-val {
+    font-size: 1.2rem;
+  }
+
+  .roadmap-card {
+    padding: 1.15rem 0.95rem;
+    border-radius: 14px;
+  }
+
+  .cs-conversion-cta {
+    padding: 2rem 1.15rem;
+    border-radius: 18px;
+    margin: 2.2rem 0 1.5rem;
+  }
+  .cta-title {
+    font-size: clamp(1.4rem, 5vw, 1.85rem);
+  }
+  .cta-subtitle {
+    font-size: 0.92rem;
+    margin-bottom: 1.3rem;
+  }
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.7rem;
+  }
+  .cta-btn-gold,
+  .cta-btn-ghost,
+  .cta-btn-pdf {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .cs-pagination-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .cs-page-nav-card {
+    max-width: 100%;
+  }
+
+  .connect-dialog {
+    padding: 1.5rem 1.15rem;
+    border-radius: 18px;
+    margin: 1rem;
+  }
+  .connect-dialog-title {
+    font-size: 1.25rem;
+  }
+  .direct-email-box {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+  .btn-copy-email {
+    width: 100%;
+  }
+  .connect-links-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .connect-links-row a,
+  .connect-links-row button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .dashboard-navbar {
+    padding: 0 0.5rem;
+  }
+  .brand-text-name {
+    display: none;
+  }
+  .brand-avatar-mini {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+  .nav-role-pill {
+    padding: 0.35rem 0.55rem;
+  }
+  #nav-pill-consultant::after,
+  #nav-pill-builder::after {
+    display: none;
+  }
+  .nav-download-pdf-btn::after {
+    display: none;
+  }
+  .nav-download-pdf-btn {
+    padding: 0.42rem;
+  }
+  .btn-lets-connect {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.74rem;
+  }
+
+  .case-study-wrapper {
+    padding: calc(60px + 44px + 0.75rem) 0.65rem 3rem 0.65rem;
+  }
+  .cs-hero,
+  .cs-section {
+    padding: 1.15rem 0.85rem;
+  }
+  .cs-card,
+  .wf-col,
+  .roadmap-card {
+    padding: 1rem 0.85rem;
+  }
+  .email-address-text {
+    font-size: 0.8rem;
+    word-break: break-all;
+  }
+}
+

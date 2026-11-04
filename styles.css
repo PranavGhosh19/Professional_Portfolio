@@ -3968,7 +3968,7 @@ body[data-active-page="products"] .products-overview-grid {
 }
 
 /* ==========================================================================
-   RESPONSIVE QUERIES
+   RESPONSIVE QUERIES & MOBILE/TABLET REFINEMENTS
    ========================================================================== */
 @media (max-width: 1200px) {
   .landing-metrics-top-row,
@@ -3991,12 +3991,13 @@ body[data-active-page="products"] .products-overview-grid {
 }
 
 @media (max-width: 1024px) {
-  .nav-centre {
-    display: none;
-  }
-
   .nav-toggle-sidebar-btn {
     display: flex;
+  }
+
+  .nav-role-slider-track {
+    transform: scale(0.92);
+    transform-origin: center;
   }
 
   .dashboard-sidebar {
@@ -4011,30 +4012,169 @@ body[data-active-page="products"] .products-overview-grid {
   .dashboard-main {
     margin-left: 0;
     width: 100%;
+    padding: 1.5rem 1.25rem 5rem 1.25rem !important;
+  }
+
+  body[data-active-page="products"] .dashboard-main,
+  .dashboard-layout[data-active-page="products"] .dashboard-main {
+    padding: 1.5rem 1.25rem 5rem 1.25rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-role-slider-track {
+    transform: scale(0.86);
+    transform-origin: center;
+  }
+
+  .dashboard-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .dashboard-search-wrap {
+    width: 100%;
+  }
+
+  .dashboard-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .connect-dialog {
+    padding: 1.6rem 1.2rem;
+    margin: 1rem;
+  }
+
+  .direct-email-box {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+
+  .direct-email-box .btn-copy-email {
+    width: 100%;
+  }
+
+  .connect-links-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .connect-links-row a,
+  .connect-links-row button {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .visa-stages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visa-terminal-body {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .visa-ascii-diagram {
+    padding: 0.85rem 1rem;
+    font-size: 0.68rem;
   }
 }
 
 @media (max-width: 640px) {
   .dashboard-navbar {
-    padding: 0 1rem;
+    padding: 0 0.85rem;
+    height: 60px;
+  }
+
+  .nav-centre {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .nav-role-slider-track {
+    transform: none;
+    padding: 2px;
+  }
+
+  .nav-role-pill {
+    padding: 0.35rem 0.65rem;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+  }
+
+  .nav-role-pill span:not(.nav-centre-dot) {
+    display: none;
+  }
+
+  #nav-pill-consultant::after {
+    content: "Consultant";
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  #nav-pill-builder::after {
+    content: "Builder";
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  .dashboard-layout {
+    padding-top: 60px;
+  }
+
+  .dashboard-sidebar {
+    top: 60px;
+    height: calc(100vh - 60px);
+    width: 260px;
+  }
+
+  .dashboard-main {
+    padding: 1.2rem 0.9rem 4.5rem 0.9rem !important;
+  }
+
+  body[data-active-page="products"] .dashboard-main,
+  .dashboard-layout[data-active-page="products"] .dashboard-main {
+    padding: 1.2rem 0.9rem 4.5rem 0.9rem !important;
   }
 
   .brand-text-name {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+  }
+
+  .brand-text-name span:not(:first-child) {
+    display: none;
   }
 
   .btn-lets-connect {
-    padding: 0.45rem 1rem;
-    font-size: 0.8rem;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.78rem;
   }
 
   .landing-metrics-top-row,
   .landing-metrics-grid {
     grid-template-columns: 1fr;
+    gap: 0.9rem;
   }
 
   .landing-hero-name {
-    font-size: 1.85rem;
+    font-size: 1.65rem;
+    line-height: 1.2;
+  }
+
+  .landing-hero-role {
+    font-size: 1.05rem;
   }
 
   .overview-kpis-grid {
@@ -4043,6 +4183,162 @@ body[data-active-page="products"] .products-overview-grid {
 
   .dashboard-cards-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card-top-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .card-chips-row {
+    gap: 0.35rem;
+  }
+
+  .tech-chip, .tag {
+    font-size: 0.68rem;
+    padding: 0.22rem 0.55rem;
+  }
+
+  .exp-role-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .exp-role-title-row .card-role-title {
+    font-size: 1.15rem;
+  }
+
+  .exp-company-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .exp-track-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .track-client-name {
+    font-size: 0.92rem;
+  }
+
+  .track-focus-tag {
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  .case-study-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+
+  .case-study-meta-cluster {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .case-study-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+
+  .case-study-read-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .study-impact-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .products-tech-impact-bar {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .bar-main-title {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .dashboard-navbar {
+    padding: 0 0.5rem;
+  }
+
+  .brand-text-name {
+    display: none;
+  }
+
+  .brand-avatar-mini {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+
+  .nav-role-pill {
+    padding: 0.35rem 0.55rem;
+  }
+
+  #nav-pill-consultant::after,
+  #nav-pill-builder::after {
+    display: none;
+  }
+
+  .btn-lets-connect {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.74rem;
+  }
+
+  .btn-lets-connect span:last-child {
+    display: none;
+  }
+
+  .dashboard-main {
+    padding: 1rem 0.65rem 4rem 0.65rem !important;
+  }
+
+  body[data-active-page="products"] .dashboard-main,
+  .dashboard-layout[data-active-page="products"] .dashboard-main {
+    padding: 1rem 0.65rem 4rem 0.65rem !important;
+  }
+
+  .dashboard-card,
+  .case-study-card {
+    padding: 1.2rem 1rem;
+    border-radius: 16px;
+  }
+
+  .experience-card-horizontal {
+    padding: 1.2rem 1rem !important;
+    border-radius: 16px;
+  }
+
+  .exp-horizontal-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .landing-photo-card {
+    max-width: 100%;
+  }
+
+  .landing-welcome-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .email-address-text {
+    font-size: 0.8rem;
+    word-break: break-all;
+  }
+
+  .copilot-dialog {
+    max-height: 85vh;
+    margin: 0.5rem;
   }
 }
 
